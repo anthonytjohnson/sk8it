@@ -7,17 +7,43 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "swiper/swiper-bundle";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
 
-html, body {
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html {
   height: 100%;
+  font-size: 62.5%;
 }
 
 body {
   background-color: #222831;
   color: white;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
 }

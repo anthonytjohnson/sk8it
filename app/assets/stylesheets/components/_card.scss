@@ -1,0 +1,20 @@
+.card-sock {
+  display: flex;
+}
+
+.card-sock-img {
+  width: 400px;
+  height: 400px;
+}
+
+.card-sock-info {
+  &p {
+
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}

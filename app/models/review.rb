@@ -3,6 +3,6 @@ class Review < ApplicationRecord
 
   validates :comment, presence: true
   validates :rating, presence: true
-  validates :comment, length: { within: 10..140 }
+  validates :comment, length: { within: 10..500 }
   validates :rating, numericality: { only_integer: true }
 end

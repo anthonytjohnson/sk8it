@@ -11,3 +11,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #222831;
+}

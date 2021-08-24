@@ -12,7 +12,9 @@ require 'faker'
 Review.destroy_all
 Spot.destroy_all
 User.destroy_all
+
 puts "Populating the database..."
+
 
 10.times do
   file = URI.open('https://thispersondoesnotexist.com/image')
@@ -37,7 +39,7 @@ spot = Spot.create!(
   description: "Nice place to spend time with kids",
   address: "1-5-27 Ikejiri, Setagaya City, Tokyo",
   category: "park",
-  user_id: User.last.id,
+  user_id: User.last.id
 )
 spot.photos.attach(io: File.open("app/assets/images/setagawa1.png"), filename: "setagawa1.png", content_type: "image/jpeg")
 spot.photos.attach(io: File.open("app/assets/images/setagawa2.png"), filename: "setagawa2.png", content_type: "image/jpeg")
@@ -48,7 +50,7 @@ spot = Spot.create!(
   description: "Massive half pipe and numerous ramps",
   address: "Adachi City, Tokyo, 120-0024",
   category: "park",
-  user_id: User.last.id,
+  user_id: User.last.id
 )
 spot.photos.attach(io: File.open("app/assets/images/murasaki1.png"), filename: "murasaki1.png", content_type: "image/jpeg")
 spot.photos.attach(io: File.open("app/assets/images/murasaki2.png"), filename: "murasaki2.png", content_type: "image/jpeg")
@@ -59,7 +61,7 @@ spot = Spot.create!(
   description: "Expert staff",
   address: "1-1-10 Aomi, Koto City, Tokyo",
   category: "shop",
-  user_id: User.last.id,
+  user_id: User.last.id
 )
 spot.photos.attach(io: File.open("app/assets/images/odiaba1.png"), filename: "odiaba1.png", content_type: "image/jpeg")
 spot.photos.attach(io: File.open("app/assets/images/odiaba2.png"), filename: "odiaba2.png", content_type: "image/jpeg")
@@ -70,7 +72,7 @@ spot = Spot.create!(
   description: "Unique store with excellent prices",
   address: "3 Chome-22-6 Uchikanda, Chiyoda City, Tokyo 101-0047",
   category: "shop",
-  user_id: User.last.id,
+  user_id: User.last.id
 )
 spot.photos.attach(io: File.open("app/assets/images/prime1.png"), filename: "prime1.png", content_type: "image/jpeg")
 spot.photos.attach(io: File.open("app/assets/images/prime2.png"), filename: "prime2.png", content_type: "image/jpeg")

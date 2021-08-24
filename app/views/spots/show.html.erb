@@ -1,7 +1,19 @@
-<h1>This is the show page</h1>
+<div class="container mt-5">
+  <h1><%= @spot.name %></h1>
+  <p><%= @spot.description %></p>
+  <p><%= @spot.address %></p>
+    <div class="d-flex ">
+      <% @spot.photos.each do |photo| %>
+        <%= image_tag(photo, style: 'height: auto; width: 350px;') %>
+      <% end %>
+    </div>
+  <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-primary mt-3" %>
+</div>
 
-<div class="container">
-  <%= @spot.name %>
-
+<div class="container mt-5">
+  <h1>Top Video</h1>
+  <% @videos.each do |video| %>
+    <%= video.caption %>
+  <% end %>
 
 </div>

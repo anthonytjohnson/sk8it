@@ -3,6 +3,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @videos = Video.all
     authorize @spot
   end
 

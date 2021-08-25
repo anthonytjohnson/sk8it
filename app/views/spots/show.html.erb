@@ -6,11 +6,19 @@
   <p><i class="fas fa-map-marker-alt"></i> <%= @spot.address %></p>
   <div data-controller="carousel" class="swiper-container">
     <div class="swiper-wrapper">
+    <% if @spot.photos.attached? %>
       <% @spot.photos.each do |photo| %>
         <div class="swiper-slide">
-          <%= image_tag(photo, style: 'height: 20rem; width: auto;') %>
+          <%= cl_image_tag(photo.key, :crop=>"lfill")%>
         </div>
       <% end %>
+    <% else %>
+    <% @spot.photos.each do |photo| %>
+      <div class="swiper-slide">
+        <%= image_tag(photo, style: 'height: 20rem; width: auto;')%>
+      </div>
+    <% end %>
+    <% end %>
     </div>
   </div>
 </div>

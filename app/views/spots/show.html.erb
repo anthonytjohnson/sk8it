@@ -30,7 +30,7 @@
 
 <div class="mt-5">
   <h2>Top Video</h2>
-  <% @video.each do |video| %>
+  <% @spot.videos.each do |video| %>
     <div class="container">
       <%= cl_video_tag(video.video.key, controls: true, width: 300) %>
       <%= video.caption %>

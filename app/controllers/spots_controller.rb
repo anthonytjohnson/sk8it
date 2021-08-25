@@ -57,8 +57,6 @@ class SpotsController < ApplicationController
       {
         lat: spot.latitude,
         lng: spot.longitude
-        # info_window: render_to_string(partial: "info_window", locals: { spot: spot }),
-        # image_url: helpers.asset_url("sockspink.png")
       }
     end
   end
@@ -66,6 +64,7 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @videos = Video.where(params[:spot_id])
+    @video = Video.find(params[:id])
     authorize @spot
   end
 

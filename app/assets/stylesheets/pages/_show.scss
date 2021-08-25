@@ -1,9 +1,20 @@
 .spot {
   margin: 1rem;
   background-color: #30475E;
-  padding: 1.5rem 1rem 1.5rem 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 
 #marker {
   color: #DDDDDD;
+}
+
+.swiper-slide {
+
+}
+
+.spot img {
+  width: auto;
+  height: 30rem;
+  object-fit: cover;
+  padding: 1rem;
 }

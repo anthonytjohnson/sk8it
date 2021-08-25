@@ -9,9 +9,9 @@
         <%= link_to "Browse", "#", class: "btn btn-gradient m-2" %>
       </div>
     <% else %>
-      <div class="container d-flex flex-column justify-content-around">
-        <h2>Welcome back, user!.</h2>
-        <%= link_to "Browse", "#", class: "btn btn-gradient" %>
+      <h2 class="mb-3" style="margin: 0 auto">Welcome back, user!</h2>
+      <div class="container d-flex justify-content-center">
+        <%= link_to "Browse", spots_path, class: "btn btn-gradient" %>
       </div>
     <% end %>
   </div>

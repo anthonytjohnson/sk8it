@@ -38,7 +38,7 @@ spot = Spot.create!(
   name: "Setagaya Park Skateboard Park",
   description: "Nice place to spend time with kids",
   address: "1-5-27 Ikejiri, Setagaya City, Tokyo",
-  category: "park",
+  category: "spot",
   user_id: User.last.id
 )
 spot.photos.attach(io: File.open("app/assets/images/setagawa1.png"), filename: "setagawa1.png", content_type: "image/jpeg")
@@ -49,7 +49,7 @@ spot = Spot.create!(
   name: "Murasaki Park Tokyo",
   description: "Massive half pipe and numerous ramps",
   address: "Adachi City, Tokyo, 120-0024",
-  category: "park",
+  category: "spot",
   user_id: User.last.id
 )
 spot.photos.attach(io: File.open("app/assets/images/murasaki1.png"), filename: "murasaki1.png", content_type: "image/jpeg")

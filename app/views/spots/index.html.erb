@@ -11,7 +11,7 @@
 <br>
 
 <div id="map"
-  style="width: 100vw; height: 60vh;"
+  style="width: 100vw; height: 57vh;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
@@ -22,14 +22,18 @@
     <div class="swiper-slide">
       <div class="card" style="width: 100vw; height: 30vh; background-color: #222831;">
         <%#=link_to image_tag(spot.photos[0], style: 'height: 23vh; width: 100vw;'), spot %>
-        <%= link_to spot do %>
-        <%= spot.photos.attached? ? cl_image_tag(spot.photos[0].key) : image_tag(spot.photos[0], style: 'height: 23vh; width: 100vw;')%>
-        <% end %>
+        <div style="height: 23vh;">
+        <%#= link_to spot do %>
+        <%= spot.photos.attached? ? cl_image_tag(spot.photos[0].key) : image_tag(spot.photos[0])%>
+        <%# end %>
+        </div>
+        <div class="card-body">
+          <h4 class="text-shadow" ><%= link_to spot.name.capitalize, spot %></h4>
+        </div>
+
 
       </div>
-        <div class="card-body">
-          <h4 class="card-text" ><%= link_to spot.name.capitalize, spot %></h4>
-        </div>
+
     </div>
     <% end %>
   </div>

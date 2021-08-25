@@ -1,31 +1,34 @@
-<div class="container mt-5">
-  <div class="mb-3">
+<div class="spot">
+  <div class="show-head">
     <h1><%= @spot.name %></h1>
     <p></i><%= @spot.description %></p>
-  </div>
-  <p><i class="fas fa-map-marker-alt"></i> <%= @spot.address %></p>
-  <div data-controller="carousel" class="swiper-container">
+    <p><i class="fas fa-map-marker-alt" id="marker"></i> <%= @spot.address %></p>
+  <div data-controller="carousel" class="swiper-container" id="show">
     <div class="swiper-wrapper">
     <% if @spot.photos.attached? %>
       <% @spot.photos.each do |photo| %>
         <div class="swiper-slide">
-          <%= cl_image_tag(photo.key, :crop=>"lfill")%>
+          <%= cl_image_tag(photo.key)%>
         </div>
       <% end %>
     <% else %>
     <% @spot.photos.each do |photo| %>
       <div class="swiper-slide">
-        <%= image_tag(photo, style: 'height: 20rem; width: auto;')%>
+        <%= image_tag(photo)%>
       </div>
     <% end %>
     <% end %>
     </div>
   </div>
+  </div>
 </div>
-<div class="container mt-3">
+
+
+<div class="">
   <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient mt-3" %>
 </div>
-<div class="container mt-5">
+
+<div class="mt-5">
   <h2>Top Video</h2>
   <% @video.each do |video| %>
     <div class="container">

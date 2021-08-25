@@ -1,15 +1,17 @@
 .spot {
   margin: 1rem;
-  background-color: #30475E;
   padding: 1.5rem 1rem 1rem 1rem;
 }
 
+h2 {
+  margin-left: 1rem;
+}
+
 #marker {
-  color: #DDDDDD;
+  color: #dddddd;
 }
 
 .swiper-slide {
-
 }
 
 .spot img {
@@ -17,4 +19,46 @@
   height: 30rem;
   object-fit: cover;
   padding: 1rem;
+}
+
+.btn-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button,
+input {
+  outline-color: transparent;
+  outline-style: none;
+  border: none;
+  background: #dddddd;
+  padding: 0.5rem 1rem;
+  :focus {
+    outline-color: transparent;
+    outline-style: none;
+  }
+}
+
+input#query.form-control {
+  border-radius: 0;
+  border: none;
+}
+
+i {
+  color: #f05454;
+}
+
+.video-infos {
+  background: #30475E;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }

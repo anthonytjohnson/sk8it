@@ -11,7 +11,7 @@
 <br>
 
 <div id="map"
-  style="width: 100vw; height: 57vh;"
+  style="width: 100vw; height: 56vh;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
@@ -20,7 +20,7 @@
   <div class="swiper-wrapper">
     <% @spots.each do |spot| %>
     <div class="swiper-slide">
-      <div class="card" style="width: 100vw; height: 30vh; background-color: #222831;">
+      <div class="card" style="width: 100vw; height: 29vh; background-color: #222831;">
         <%#=link_to image_tag(spot.photos[0], style: 'height: 23vh; width: 100vw;'), spot %>
         <div style="height: 23vh;">
         <%#= link_to spot do %>

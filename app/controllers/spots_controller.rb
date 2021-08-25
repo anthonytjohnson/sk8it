@@ -3,7 +3,45 @@ class SpotsController < ApplicationController
 
   def index
     @spots = policy_scope(Spot)
-    if params[:query].present?
+    if params[:spot].present? && params[:query].present?
+      sql_query = " \
+      (spots.name @@ :query \
+      OR spots.description @@ :query \
+      OR spots.address @@ :query \)
+      AND spots.category @@ :spot \
+      "
+      @spots = Spot.where(sql_query, query: "%#{params[:query]}%", spot: "%#{params[:spot]}%")
+      if @spots.empty?
+        @spots = policy_scope(Spot)
+      end
+
+    elsif params[:spot].present?
+      sql_query = " \
+      spots.category @@ :spot \
+      "
+      @spots = Spot.where(sql_query, spot: "%#{params[:spot]}%")
+
+
+  elsif params[:shop].present? && params[:query].present?
+      sql_query = " \
+      (spots.name @@ :query \
+      OR spots.description @@ :query \
+      OR spots.address @@ :query \)
+      AND spots.category @@ :shop \
+      "
+
+      @spots = Spot.where(sql_query, shop: "%#{params[:shop]}%", query: "%#{params[:query]}%")
+      if @spots.empty?
+        @spots = policy_scope(Spot)
+      end
+
+    elsif params[:shop].present?
+      sql_query = " \
+      spots.category @@ :shop \
+      "
+      @spots = Spot.where(sql_query, shop: "%#{params[:shop]}%")
+
+    elsif params[:query].present?
       sql_query = " \
       spots.name @@ :query \
       OR spots.description @@ :query \

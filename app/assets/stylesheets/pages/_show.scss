@@ -3,28 +3,15 @@
   padding: 1.5rem 1rem 1rem 1rem;
 }
 
-.spot-video {
-  background-color: $sk8it-blue;
-  margin: 1rem;
-  padding: 1.5rem 1rem 1rem 1rem;
-}
-
-h2 {
-  margin-left: 1rem;
-}
-
 #marker {
   color: #dddddd;
-}
-
-.swiper-slide {
 }
 
 .spot img {
   width: auto;
   height: 30rem;
   object-fit: cover;
-  padding: 1rem;
+
 }
 
 .btn-upload {
@@ -44,6 +31,7 @@ input {
   outline-color: transparent;
   outline-style: none;
   border: none;
+  margin-bottom: 1rem;
   background: #dddddd;
   padding: 0.5rem 1rem;
   :focus {
@@ -61,9 +49,29 @@ i {
   color: #f05454;
 }
 
+.card-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.card-video .avatar-bordered {
+  position: absolute;
+  bottom: 21rem;
+  left: 2.5rem;
+  z-index: 2;
+
+}
 .video-infos {
   background: #30475E;
-  padding: 8px;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
+  align-content: center;
+  width: 100%;
 }

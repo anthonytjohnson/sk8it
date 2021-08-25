@@ -7,7 +7,7 @@ class Spot < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  CATEGORIES = ["spot", "shop", "park"]
+  CATEGORIES = ["spot", "shop"]
   validates :name, presence: true
   validates :address, presence: true
   validates :description, presence: true

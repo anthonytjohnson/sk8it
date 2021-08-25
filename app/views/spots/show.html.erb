@@ -28,6 +28,9 @@
 <div class="container mt-5">
   <h2>Top Video</h2>
   <% @video.each do |video| %>
-    <%= video.caption %>
+    <div class="container">
+      <%= cl_video_tag(video.video.key, controls: true, width: 300) %>
+      <%= video.caption %>
+    </div>
   <% end %>
 </div>

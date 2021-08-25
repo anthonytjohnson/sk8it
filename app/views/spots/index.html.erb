@@ -1,18 +1,4 @@
-<%= form_tag spots_path, method: :get do %>
-  <div class="d-flex">
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a spot"
-    %>
-    <%= radio_button_tag(:spot, "spot") %>
-      <%= label_tag(:spot_park, "Spots") %>
-    <%= radio_button_tag(:shop, "shop") %>
-      <%= label_tag(:spot_shop, "Shops") %>
-    <%= submit_tag "Search", class: "btn btn-danger" %>
-  </div>
-<% end %>
-<br>
+<%= render 'shared/search' %>
 
 <div id="map"
   style="width: 100vw; height: 56vh;"

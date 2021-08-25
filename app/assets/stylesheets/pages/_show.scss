@@ -3,6 +3,12 @@
   padding: 1.5rem 1rem 1rem 1rem;
 }
 
+.spot-video {
+  background-color: $sk8it-blue;
+  margin: 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
 h2 {
   margin-left: 1rem;
 }
@@ -57,8 +63,7 @@ i {
 
 .video-infos {
   background: #30475E;
-  padding: 16px;
+  padding: 8px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
 }

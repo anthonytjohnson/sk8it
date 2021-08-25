@@ -26,20 +26,46 @@
 </div>
 
 
-<div class="btn-upload">
+<div class="btn-upload mb-3">
   <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
 </div>
 
-<div class="spot">
-  <h2>Top Video</h2>
-  <% @spot.videos.each do |video| %>
-    <div class="container">
-      <%= cl_video_tag(video.video.key, controls: true, width: 300) %>
-      <div class="video-infos">
-        <p><%= video.caption %><p>
-        <p>Rating: </p>
-      </div>
+<% if @spot.videos.empty? %>
+    <h2>No videos. Be the first to add one!</h2>
+  <% else %>
+    <h2>Top Video</h2>
+    <div class="spot-video">
+      <% videos = @spot.videos %>
+      <% top_video = videos.sort_by(&:votes).last %>
+      <div class="container px-0">
+          <%= cl_video_tag(top_video.video.key, controls: true, width: 335) %>
+          <div class="video-infos">
+            <div class="container d-flex px-0 align-items-center">
+              <%= cl_image_tag current_user.photo.attached? ? cl_image_path(current_user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
+              <p class="pl-4 m-0"><%= top_video.user.username %><p>
+            </div>
+            <div>
+              <p>Votes: <%= top_video.votes %></p>
+            </div>
+          </div>
+        </div>
     </div>
-  <% end %>
-</div>
 
+    <h2>Videos</h2>
+    <div class="spot-video">
+      <% @spot.videos.each do |video| %>
+        <div class="container px-0">
+          <%= cl_video_tag(video.video.key, controls: true, width: 335) %>
+          <div class="video-infos">
+            <div class="container d-flex px-0 align-items-center">
+              <%= cl_image_tag current_user.photo.attached? ? cl_image_path(current_user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
+              <p class="pl-4 m-0"><%= video.user.username %><p>
+            </div>
+            <div>
+              <p>Votes: <%= video.votes %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+<% end %>

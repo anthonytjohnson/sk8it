@@ -1,3 +1,5 @@
+<%= render 'shared/search' %>
+
 <div class="spot">
   <div class="show-head">
     <h1><%= @spot.name %></h1>
@@ -24,15 +26,21 @@
 </div>
 
 
-<div class="">
-  <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient mt-3" %>
+<div class="btn-upload">
+  <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
 </div>
-<div class="mt-5">
+<div class="spot">
   <h2>Top Video</h2>
-  <% @video.each do |video| %>
+  <% if @spot.videos %>
+  <% @spot.videos.each do |video| %>
     <div class="container">
       <%= cl_video_tag(video.video.key, controls: true, width: 300) %>
-      <%= video.caption %>
+      <div class="video-infos">
+        <p><%= video.caption %><p>
+        <p>Rating: </p>
+      </div>
+
     </div>
   <% end %>
+<% end %>
 </div>

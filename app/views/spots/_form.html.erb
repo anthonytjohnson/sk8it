@@ -8,9 +8,7 @@
       <%= f.input :description %>
       <%= f.input :category, collection: ["spot", "shop", "park"], include_blank: false %>
       <%= f.input :address %>
-      <%= f.input :photo, as: :file %>
-      <%= f.input :photo, as: :file %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     </div>
 
     <div class="form-actions">

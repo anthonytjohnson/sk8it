@@ -29,10 +29,9 @@
 <div class="btn-upload">
   <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
 </div>
+
 <div class="spot">
   <h2>Top Video</h2>
-
-  <% if @spot.videos %>
   <% @spot.videos.each do |video| %>
     <div class="container">
       <%= cl_video_tag(video.video.key, controls: true, width: 300) %>
@@ -40,8 +39,7 @@
         <p><%= video.caption %><p>
         <p>Rating: </p>
       </div>
-
     </div>
   <% end %>
-<% end %>
 </div>
+

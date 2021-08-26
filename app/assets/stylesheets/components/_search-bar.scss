@@ -9,20 +9,25 @@
   outline-color: transparent;
   outline-style: none;
   border-style: none;
+  border-bottom: 1rem solid white;
   border-radius: 1rem 0 0 1rem;
-  background: #dddddd;
+  background: none;
   padding: 0.5rem 1rem;
   :focus {
     outline-color: transparent;
     outline-style: none;
   }
+  color: white;
 }
 .search-bar button {
-  border-style: none;
+  border-width: 0;
+  outline-color: transparent;
+  outline-style: none;
+  border-bottom: 1rem solid white;
   border-radius: 0 1rem 1rem 0;
+  background: none;
   padding: 0.5rem 1rem;
-  background: #dddddd;
-   font-size: 2rem;
+  font-size: 2rem;
 }
 
 .radios {
@@ -38,12 +43,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-// input#query.form-control {
-//   border-radius: 0;
-//   border: none;
-// }
-
-#user_photo {
-  color: black;
 }

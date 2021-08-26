@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :username, uniqueness: true
 
+  acts_as_voter
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

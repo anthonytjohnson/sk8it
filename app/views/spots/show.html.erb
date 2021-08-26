@@ -33,18 +33,7 @@
 <% else %>
   <h2>Top Video</h2>
   <div class="card-video">
-    <% videos = @spot.videos %>
-    <% top_video = videos.sort_by(&:votes).last %>
-    <%= cl_video_tag(top_video.video.key, controls: true, width: 300, class: "card-img-top") %>
-    <div class="video-infos">
-      <div class="container d-flex px-0 align-items-center">
-        <%= cl_image_tag current_user.photo.attached? ? cl_image_path(current_user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
-        <p class="pl-4 m-0"><%= top_video.user.username %><p>
-      </div>
-      <div>
-        <p>Votes: <%= top_video.votes %></p>
-      </div>
-    </div>
+    <%= render 'top_video', spot: @spot %>
   </div>
 
   <h2>Videos</h2>
@@ -53,12 +42,18 @@
       <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
       <div class="video-infos">
         <div class="container d-flex px-0 align-items-center">
-          <%= cl_image_tag current_user.photo.attached? ? cl_image_path(current_user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
+          <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
           <p class="pl-4 m-0"><%= video.user.username %><p>
         </div>
         <div class="d-flex">
-          <span><p class="mr-3">Votes: <%= video.votes %></p></span>
-          <span><p><i class="fas fa-thumbs-up"></i><p></span>
+          <span>
+            <p class="mr-3">
+              <%= video.weighted_score %>
+              <%= link_to upvote_path(video) do %>
+                <span><p><i class="fas fa-thumbs-up"></i><p></span>
+              <% end %>
+            </p>
+          </span>
         </div>
       </div>
     <% end %>

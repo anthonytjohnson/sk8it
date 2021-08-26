@@ -4,10 +4,10 @@
       <h2 class="mb-3" style="margin: 0 auto">Welcome!</h2>
       <div class="container d-flex justify-content-center">
         <%= link_to "Log In", new_user_session_path, class: "btn btn-gradient m-2" %>
-        <%= link_to "Sign Up", "#", class: "btn btn-gradient m-2" %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-gradient m-2" %>
       </div>
       <div class="container d-flex justify-content-center">
-        <%= link_to "Browse", "#", class: "btn btn-gradient m-2" %>
+        <%= link_to "Browse", spots_path, class: "btn btn-gradient m-2" %>
       </div>
     <% else %>
       <h2 class="mb-3" style="margin: 0 auto">Welcome back, <%= current_user.username.present? ? "#{current_user.username}!" : "!" %></h2>

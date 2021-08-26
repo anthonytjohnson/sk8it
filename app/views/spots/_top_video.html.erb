@@ -1,10 +1,5 @@
-<% videos = @spot.videos %>
-<% videos.map do |video| %>
-  <% video.votes = video.weighted_score %>
-<% end %>
-<% top_video = videos.sort_by(&:votes).last %>
 <%= cl_video_tag(top_video.video.key, controls: true, width: 300, class: "card-img-top") %>
-<div class="video-infos">
+<div class="video-infos" id="video-<%= top_video.id %>">
   <%= cl_image_tag top_video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
   <div>
     <p><%= top_video.caption %></p>

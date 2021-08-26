@@ -3,10 +3,6 @@
   padding: 1.5rem 1rem 1rem 1rem;
 }
 
-#marker {
-  color: #dddddd;
-}
-
 .spot img {
   width: auto;
   height: 30rem;
@@ -18,31 +14,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button,
-input {
-  outline-color: transparent;
-  outline-style: none;
-  border: none;
-  margin-bottom: 1rem;
-  background: #dddddd;
-  padding: 0.5rem 1rem;
-  :focus {
-    outline-color: transparent;
-    outline-style: none;
-  }
-}
-
-input#query.form-control {
-  border-radius: 0;
-  border: none;
 }
 
 i {

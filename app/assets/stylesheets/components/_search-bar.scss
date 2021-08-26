@@ -1,0 +1,27 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button,
+input {
+  outline-color: transparent;
+  outline-style: none;
+  border: none;
+  border-radius: 1rem 0 0 1rem;
+  background: #dddddd;
+  padding: 0.5rem 1rem;
+  :focus {
+    outline-color: transparent;
+    outline-style: none;
+  }
+}
+button {
+border-radius: 0 1rem 1rem 0;
+}
+
+input#query.form-control {
+  border-radius: 0;
+  border: none;
+}

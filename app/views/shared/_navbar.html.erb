@@ -16,10 +16,11 @@
     <div class="container justify-content-end mr-2">
       <p><%= link_to "New spot", new_spot_path %></p>
       <%= link_to new_spot_path do %>
-        <p><i class="fas fa-plus mx-2"></i></p>
+        <p><i class="fas fa-plus ml-2 mr-4"></i></p>
       <% end %>
+      <p><%= link_to "Home", spots_path %></p>
       <%= link_to spots_path do %>
-        <%= image_tag "sk8it-logo.png", class: "ml-4 icon-navbar" %>
+        <p><i class="fas fa-home mx-2"></i></p>
       <% end %>
     </div>
   </div>

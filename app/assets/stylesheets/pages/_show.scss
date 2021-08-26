@@ -1,14 +1,20 @@
 .spot {
   margin: 1rem;
-  padding: 1.5rem 1rem 1rem 1rem;
+  // padding: 1.5rem 1rem 1rem 1rem;
 }
 
 .spot img {
+  justify-content: center;
   width: auto;
   height: 30rem;
   object-fit: cover;
 }
 
+.spot h1 {
+  align-items: center;
+  border-left: 1rem solid $sk8it-blue;
+  padding-left: 1rem;
+}
 .btn-upload {
   display: flex;
   align-items: center;
@@ -42,6 +48,8 @@ i {
 .video-infos {
   background: #30475e;
   padding: 1rem;
+  padding-bottom: .2rem;
+  line-height: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

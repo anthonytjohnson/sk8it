@@ -7,6 +7,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.ap-name {
-  color: black;
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.popups .mapboxgl-popup-content {
+  background: $sk8it-black;
 }

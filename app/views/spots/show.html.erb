@@ -1,22 +1,15 @@
 <%= render 'shared/search' %>
 <%= render 'spot-details' %>
-<%# UPLOAD VIDEO BUTTON  %>
 <div class="btn-upload mb-3">
   <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
 </div>
-
-<%# TOP VIDEO  %>
 <% if @spot.videos.empty? %>
-  <h2>No videos. Be the first to add one!</h2>
+  <p class="text-center">No videos. Be the first to add one!</p>
 <% else %>
   <h2 class="ml-5 mt-3">Top Video</h2>
   <div class="card-video">
     <%= render 'top_video', spot: @spot %>
   </div>
 <% end %>
-
-<%# VIDEOS  %>
 <h2 class="ml-5 mt-5">Videos</h2>
-<div class="card-video">
-  <%= render 'videos', spot: @spot %>
-</div>
+<%= render 'videos', spot: @spot %>

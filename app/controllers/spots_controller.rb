@@ -64,7 +64,8 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @videos = Video.where(params[:spot_id])
+    @top_video = @spot.videos.sort_by(&:weighted_score).last
+    @videos = @spot.videos.where.not(id: @top_video).order(created_at: :desc)
     authorize @spot
   end
 

@@ -32,7 +32,7 @@ class VideosController < ApplicationController
     else
       @user.voted_up_on?(@video) ? @video.unliked_by(@user) : @video.liked_by(@user)
       # redirect back to show page
-      redirect_to spot_path(@spot)
+      redirect_to spot_path(@spot, anchor: "video-#{@video.id}")
     end
   end
 

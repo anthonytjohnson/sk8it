@@ -1,17 +1,17 @@
 <% @spot.videos.each do |video| %>
-  <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
-  <div class="video-infos">
-    <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
-    <p class="pl-4 m-0"><%= video.caption %>
-      <p>
-        <div>
-          <p><%= video.weighted_score %></p>
-        </div>
-        <div>
-          <%= link_to upvote_path(video) do %>
-            <p><i class="fas fa-thumbs-up"></i>
-              <p>
-              <% end %>
-            </div>
-          </div>
+  <div class="card-video">
+    <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
+    <div class="video-infos">
+      <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
+      <p><%= video.caption %></p>
+      <div>
+        <p><%= video.weighted_score %></p>
+      </div>
+      <div>
+        <%= link_to upvote_path(video) do %>
+          <p><i class="fas fa-thumbs-up"></i></p>
         <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,61 +1,22 @@
 <%= render 'shared/search' %>
-<div class="spot">
-  <div class="show-head">
-    <h1><%= @spot.name %></h1>
-    <p></i><%= @spot.description %></p>
-  <p><i class="fas fa-map-marker-alt" id="marker"></i> <%= @spot.address %></p>
-  <div data-controller="carousel" class="swiper-container" id="show">
-    <div class="swiper-wrapper">
-      <% if @spot.photos.attached? %>
-        <% @spot.photos.each do |photo| %>
-          <div class="swiper-slide">
-            <%= cl_image_tag(photo.key)%>
-          </div>
-        <% end %>
-      <% else %>
-        <% @spot.photos.each do |photo| %>
-          <div class="swiper-slide">
-            <%= image_tag(photo)%>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
-</div>
-
+<%= render 'spot-details' %>
+<%# UPLOAD VIDEO BUTTON  %>
 <div class="btn-upload mb-3">
   <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
 </div>
 
+<%# TOP VIDEO  %>
 <% if @spot.videos.empty? %>
-    <h2>No videos. Be the first to add one!</h2>
+  <h2>No videos. Be the first to add one!</h2>
 <% else %>
-  <h2>Top Video</h2>
+  <h2 class="ml-5 mt-3">Top Video</h2>
   <div class="card-video">
     <%= render 'top_video', spot: @spot %>
   </div>
-
-  <h2>Videos</h2>
-  <div class="card-video">
-    <% @spot.videos.each do |video| %>
-      <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
-      <div class="video-infos">
-        <div class="container d-flex px-0 align-items-center">
-          <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
-          <p class="pl-4 m-0"><%= video.user.username %><p>
-        </div>
-        <div class="d-flex">
-          <span>
-            <p class="mr-3">
-              <%= video.weighted_score %>
-              <%= link_to upvote_path(video) do %>
-                <span><p><i class="fas fa-thumbs-up"></i><p></span>
-              <% end %>
-            </p>
-          </span>
-        </div>
-      </div>
-    <% end %>
-  </div>
 <% end %>
+
+<%# VIDEOS  %>
+<h2 class="ml-5 mt-3">Videos</h2>
+<div class="card-video">
+  <%= render 'videos', spot: @spot %>
+</div>

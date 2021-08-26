@@ -1,16 +1,21 @@
-<div class="container">
-  <%= simple_form_for [@spot, @video] do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-    <div class="form-inputs">
-      <%= f.input :caption %>
+<%= simple_form_for [@spot, @video] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="add-a-video">
+    <div class="back-button">
+      <%= link_to spot_path(@spot) do %>
+        <i class="fas fa-arrow-circle-left"></i>
+      <% end %>
+    </div>
+    <h1 class="text-center">Add a video</h1>
+    <div id="video-input">
+      <span><%= f.input :caption %></span>
+    </div>
+    <div id="video-btn-upload">
       <%= f.input :video, as: :file, input_html: { multiple: false } %>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, class: 'btn-gradient' %>
-      <%= link_to 'Back', spots_path, class: 'btn-gradient' %>
+    <div class="video-btn-create">
+      <%= f.button :submit, 'Add Video'%>
     </div>
   <% end %>
 </div>

@@ -5,11 +5,10 @@
   justify-content: center;
 }
 
-button,
-input {
+.search-bar input {
   outline-color: transparent;
   outline-style: none;
-  border: none;
+  border-style: none;
   border-radius: 1rem 0 0 1rem;
   background: #dddddd;
   padding: 0.5rem 1rem;
@@ -18,8 +17,12 @@ input {
     outline-style: none;
   }
 }
-button {
-border-radius: 0 1rem 1rem 0;
+.search-bar button {
+  border-style: none;
+  border-radius: 0 1rem 1rem 0;
+  padding: 0.5rem 1rem;
+  background: #dddddd;
+   font-size: 2rem;
 }
 
 .radios {
@@ -36,10 +39,10 @@ border-radius: 0 1rem 1rem 0;
   align-items: center;
   justify-content: center;
 }
-input#query.form-control {
-  border-radius: 0;
-  border: none;
-}
+// input#query.form-control {
+//   border-radius: 0;
+//   border: none;
+// }
 
 #user_photo {
   color: black;

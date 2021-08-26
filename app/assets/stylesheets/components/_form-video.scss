@@ -12,8 +12,15 @@
   border-radius: 1rem;
   box-shadow: 0.1rem 0.1rem 0.5rem rgb(178, 178, 238);
   justify-content: center;
+  position: relative;
 }
 
+.back-button {
+  font-size: 3rem;
+  position: absolute;
+  top: 1rem;
+  left: 3.5rem;
+}
 #video-input input {
   font-size: 2rem;
   border-radius: 1rem;

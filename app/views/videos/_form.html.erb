@@ -1,8 +1,13 @@
-  <%= simple_form_for [@spot, @video] do |f| %>
+<%= simple_form_for [@spot, @video] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="add-a-video">
-  <h1 class="text-center">Add a video</h1>
+    <div class="back-button">
+      <%= link_to spot_path(@spot) do %>
+        <i class="fas fa-arrow-circle-left"></i>
+      <% end %>
+    </div>
+    <h1 class="text-center">Add a video</h1>
     <div id="video-input">
       <span><%= f.input :caption %></span>
     </div>
@@ -11,7 +16,6 @@
     </div>
     <div class="video-btn-create">
       <%= f.button :submit %>
-      <span><%= link_to 'Back', spot_path(@spot) %></span>
     </div>
   <% end %>
 </div>

@@ -7,7 +7,6 @@
   width: auto;
   height: 30rem;
   object-fit: cover;
-
 }
 
 .btn-upload {
@@ -26,25 +25,22 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 1rem;
   width: auto;
-  padding: 2rem;
   position: relative;
 }
 .card-video h2 {
   display: flex;
   justify-content: left;
-  }
+}
 
 .card-video .avatar-bordered {
   position: absolute;
-  bottom: 21rem;
-  left: 2rem;
-  z-index: 2;
-
+  top: 1rem;
+  left: 1rem;
 }
 .video-infos {
-  background: #30475E;
+  background: #30475e;
   padding: 1rem;
   display: flex;
   flex-direction: row;

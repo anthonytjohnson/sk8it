@@ -3,7 +3,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_window); // add this
+    const popup = new mapboxgl.Popup({className: 'popups'}).setHTML(marker.info_window); // add this
 
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
@@ -30,11 +30,12 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-    markers.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([marker.lng, marker.lat])
-        .addTo(map);
-    });
+    // markers.forEach((marker) => {
+    //   new mapboxgl.Marker()
+    //     .setLngLat([marker.lng, marker.lat])
+    //     .setPopup(popup)
+    //     .addTo(map);
+    // });
   }
 };
 

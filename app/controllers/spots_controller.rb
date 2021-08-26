@@ -64,7 +64,6 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @videos = Video.where(params[:spot_id])
-    @video = Video.find(params[:id])
     authorize @spot
   end
 

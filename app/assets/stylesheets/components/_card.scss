@@ -1,12 +1,34 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 16px;
+.spot-preview {
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  border: 1rem solid $sk8it-black;
+  border-radius: 0rem 0rem 2rem 2rem;
+  z-index: 2;
+  border-top: 0;
 }
 
-.text-shadow a {
-  color: #f05454;
+.spot-preview img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.spot-info a {
+  color: white;
   padding: 1rem;
-  background-color: #30475E;
+  background-color: #30475e;
   border-left: 1rem solid #f05454;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+#map {
+  border: 1rem solid $sk8it-black;
+  border-radius: 2rem 2rem 0rem 0rem;
+
 }

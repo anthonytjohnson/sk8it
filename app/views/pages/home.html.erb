@@ -1,7 +1,7 @@
 <body id="home-bg">
   <div id="home-container">
     <% if current_user.nil? %>
-      <h2 class="mb-3" style="margin: 0 auto">Welcome!</h2>
+      <h2 class="mb-3" style="margin: 0 auto; font-size: 3rem">Welcome!</h2>
       <div class="container d-flex justify-content-center">
         <%= link_to "Log In", new_user_session_path, class: "btn btn-gradient m-2" %>
         <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-gradient m-2" %>
@@ -10,7 +10,7 @@
         <%= link_to "Browse", spots_path, class: "btn btn-gradient m-2" %>
       </div>
     <% else %>
-      <h2 class="mb-3" style="margin: 0 auto">Welcome back, <%= current_user.username.present? ? "#{current_user.username}!" : "!" %></h2>
+      <h2 class="mb-3 text-center" style="margin: 0 auto; font-size: 3rem">Welcome back,<br> <%= current_user.username.present? ? "#{current_user.username.capitalize}!" : "!" %></h2>
       <div class="container d-flex justify-content-center">
         <%= link_to "Browse", spots_path, class: "btn btn-gradient" %>
       </div>

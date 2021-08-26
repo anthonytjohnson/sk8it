@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :videos, only: [:update] do
     resources :reviews, only: [:create]
   end
+
+  get '/videos/:id/upvote', to: 'videos#upvote', as: 'upvote'
 end

@@ -19,6 +19,23 @@ class VideosController < ApplicationController
     end
   end
 
+  def upvote
+    # retrieve video by id
+    @video = Video.find(params[:id])
+    @spot = @video.spot
+    authorize @video
+    # retrieve current user
+    @user = current_user
+    # upvote video by current user
+    if @user.nil?
+      redirect_to new_user_session_path
+    else
+      @user.voted_up_on?(@video) ? @video.unliked_by(@user) : @video.liked_by(@user)
+      # redirect back to show page
+      redirect_to spot_path(@spot)
+    end
+  end
+
   private
 
   def video_params

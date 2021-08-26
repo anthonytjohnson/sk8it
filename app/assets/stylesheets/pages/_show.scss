@@ -26,10 +26,10 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 2rem;
   width: auto;
-  padding: 2rem;
   position: relative;
+  box-shadow: .1rem .1rem .3rem black;
 }
 .card-video h2 {
   display: flex;
@@ -38,8 +38,8 @@ i {
 
 .card-video .avatar-bordered {
   position: absolute;
-  bottom: 21rem;
-  left: 2rem;
+  bottom: 19rem;
+  left: 1rem;
   z-index: 2;
 
 }

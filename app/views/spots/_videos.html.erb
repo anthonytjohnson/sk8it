@@ -3,11 +3,12 @@
     <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
     <div class="video-infos">
       <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
-      <p><%= video.caption %></p>
       <div>
-        <p><%= video.weighted_score %></p>
+        <p><%= video.caption.capitalize %></p>
+        <p>Uploaded by: <%= video.user.username.capitalize %></p>
       </div>
-      <div>
+      <div class="d-flex align-items-center justify-content-center">
+        <p class="mr-5"><%= video.weighted_score %></p>
         <%= link_to upvote_path(video) do %>
           <p><i class="fas fa-thumbs-up"></i></p>
         <% end %>

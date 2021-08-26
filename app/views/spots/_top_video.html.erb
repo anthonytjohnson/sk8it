@@ -5,18 +5,18 @@
 <% top_video = videos.sort_by(&:votes).last %>
 <%= cl_video_tag(top_video.video.key, controls: true, width: 300, class: "card-img-top") %>
 <div class="video-infos">
-  <div class="container d-flex px-0 align-items-center">
-    <%= cl_image_tag top_video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
-    <p class="pl-4 m-0"><%= top_video.user.username %><p>
-  </div>
-  <div class="d-flex">
-    <span>
-      <p class="mr-3">
-        <%= top_video.weighted_score %>
-        <%= link_to upvote_path(top_video) do %>
-          <span><p><i class="fas fa-thumbs-up"></i><p></span>
-        <% end %>
-      </p>
-    </span>
-  </div>
+  <%= cl_image_tag top_video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
+  <p class="pl-4 m-0"><%= top_video.caption %>
+    <p>
+      <div>
+        <p><%= top_video.weighted_score %>
+          <p>
+          </div>
+          <div>
+            <%= link_to upvote_path(top_video) do %>
+              <p><i class="fas fa-thumbs-up"></i></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
 </div>

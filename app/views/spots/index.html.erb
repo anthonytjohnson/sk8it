@@ -9,7 +9,7 @@
     <% @spots.each do |spot| %>
       <div class="swiper-slide">
         <div class="spot-preview" style="width: 100vw; background-color: #222831;">
-          <%=link_to image_tag(spot.photos[0], style: 'height: 31.5vh; width: 100vw;'), spot %>
+          <%=link_to image_tag(spot.photos[0], style: 'height: 34vh; width: 100vw;'), spot %>
           <div>
             <% link_to spot do %>
               <%= spot.photos.attached? ? cl_image_tag(spot.photos[0].key) : image_tag(spot.photos[0])%>

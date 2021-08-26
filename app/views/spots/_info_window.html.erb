@@ -1,0 +1,4 @@
+<h2><%= link_to spot.name.capitalize, spot %></h2>
+<%= cl_image_tag spot.photos.attached? ? cl_image_tag(spot.photos[0].key, :width => 120, :height => 120, :crop => :limit
+) : image_tag(spot.photos[0], :width => 120, :height => 120, :crop => :limit
+) %>

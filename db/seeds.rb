@@ -10,6 +10,7 @@ require 'faker'
 
 # puts "cleaning db"
 Review.destroy_all
+Video.destroy_all
 Spot.destroy_all
 User.destroy_all
 
@@ -83,19 +84,22 @@ spot.photos.attach(io: File.open("app/assets/images/prime3.png"), filename: "pri
 Review.create!(
   comment: "Super nice, friendly guy!",
   rating: [1,2,3,4,5].sample,
-  spot_id: Spot.last.id
+  spot_id: Spot.last.id,
+  user_id: User.first.id
 )
 
 Review.create!(
   comment: "I felt it was a very stylish shop.",
   rating: [1,2,3,4,5].sample,
-  spot_id: Spot.last.id
+  spot_id: Spot.last.id,
+  user_id: User.last.id
 )
 
 Review.create!(
   comment: "I was surprised at the uniqueness and had a good time in a friendly atmosphere",
   rating: [1,2,3,4,5].sample,
-  spot_id: Spot.last.id
+  spot_id: Spot.last.id,
+  user_id: User.first.id
 )
 
 
@@ -103,17 +107,20 @@ Review.create!(
 Review.create!(
   comment: "Decent skate park, have an area for BMX only, massive half pipe",
   rating: [1,2,3,4,5].sample,
-  spot_id: Spot.first.id
+  spot_id: Spot.first.id,
+  user_id: User.last.id
 )
 
 Review.create!(
   comment: "If you like skating, riding bike, then this tiny place will make your weekend for sure.",
   rating: [1,2,3,4,5].sample,
-  spot_id: Spot.first.id
+  spot_id: Spot.first.id,
+  user_id: User.first.id
 )
 
 Review.create!(
   comment: "Indoor area seems to be for good skaters only and aren't that friendly.",
   rating: [1,2,3,4,5].sample,
-  spot_id: Spot.first.id
+  spot_id: Spot.first.id,
+  user_id: User.last.id
 )

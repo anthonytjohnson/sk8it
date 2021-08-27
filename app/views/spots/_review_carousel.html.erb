@@ -5,18 +5,18 @@
   </div>
 <% else %>
   <div data-controller="carousel" class="swiper-container" id="show">
-      <div class="swiper-wrapper">
-          <% @spot.reviews.each do |review| %>
-            <div class="swiper-slide">
-              <p><em><%= review.comment %></em></p>
-              <div class="d-flex">
-              <% review.rating.times do %>
+    <div class="swiper-wrapper">
+      <% @spot.reviews.each do |review| %>
+        <div class="swiper-slide">
+          <p><em><%= review.comment %></em></p>
+          <div class="d-flex">
+            <% review.rating.times do %>
               <p><em><i class="fas fa-star"></i> </em></p>
             <% end %>
-            </div>
-            </div>
-          <% end %>
-          <hr>
-      </div>
+          </div>
+        </div>
+      <% end %>
+      <hr>
+    </div>
   </div>
 <% end %>

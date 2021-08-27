@@ -1,5 +1,6 @@
 <%= render 'shared/search' %>
 <%= render 'spot-details' %>
+<%= render 'review_carousel' %>
 <% if @spot.category == "spot" %>
   <div class="btn-upload mb-3">
     <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>

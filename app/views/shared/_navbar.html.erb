@@ -5,7 +5,7 @@
         <%= cl_image_tag current_user.photo.attached? ? cl_image_path(current_user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered ml-2" %>
       </button>
       <div id="myDropdown" class="dropdown-content">
-        <%= link_to "My Profile", "#" %>
+        <%= link_to "My Profile", dashboard_videos_path %>
         <%= link_to "Edit Profile", edit_user_registration_path %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </div>

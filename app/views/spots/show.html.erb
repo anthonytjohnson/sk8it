@@ -51,17 +51,17 @@
     <% else %>
 
 
-              <% @spot.reviews.each do |review| %>
+      <% @spot.reviews.each do |review| %>
 
-                  <p><em><%= review.comment %></em></p>
-                  <div class="d-flex">
-                  <% review.rating.times do %>
-                  <p><em><i class="fas fa-star"></i> </em></p>
-                <% end %>
-                </div>
+          <p><em><%= review.comment %></em></p>
+          <div class="d-flex">
+          <% review.rating.times do %>
+          <p><em><i class="fas fa-star"></i> </em></p>
+        <% end %>
+        </div>
 
-              <% end %>
-              <hr>
+      <% end %>
+      <hr>
 
 
     <% end %>

@@ -8,7 +8,15 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      get :profile
+    end
+  end
+
+  namespace :dashboard do
+    resources :videos, only: [:index]
+  end
 
   resources :videos, only: [:update] do
     resources :reviews, only: [:create]

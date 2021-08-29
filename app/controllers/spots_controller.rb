@@ -68,6 +68,7 @@ class SpotsController < ApplicationController
     @videos = @spot.videos.where.not(id: @top_video).order(created_at: :desc)
     authorize @spot
     @reviews = @spot.reviews
+    @review = Review.new
   end
 
   def new

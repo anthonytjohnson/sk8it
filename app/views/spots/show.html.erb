@@ -37,8 +37,12 @@
     </div>
   </div>
 
+
   <div class="tab-pane fade py-3 mb-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
   <div class="container mb-3">
+    <div class="btn-upload mb-3">
+       <%= render 'reviews/modal' %>
+    </div>
     <% if @spot.reviews.empty? %>
       <div class='container mt-5 text-center'>
         <p>No reviews yet.</p>

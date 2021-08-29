@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :videos
   has_many :spots
   has_one_attached :photo
+  has_many :videos_as_owner, through: :spots, source: :videos
 
   validates :username, presence: true
   validates :username, uniqueness: true

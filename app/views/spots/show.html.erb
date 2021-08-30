@@ -1,71 +1,59 @@
 <%= render 'shared/search' %>
 <%= render 'spot-details' %>
 <% if @spot.category == "shop" %>
-<%= render 'review_carousel' %>
+  <%= render 'review_carousel' %>
 <% end %>
 <% if @spot.category == "spot" %>
-
-
-
-<ul class="nav tabs-underlined" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#my-socks" role="tab" aria-controls="home" aria-selected="true">Videos</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="profile" aria-selected="false">Reviews</a>
-  </li>
-</ul>
-
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade py-3 show active" id="my-socks" role="tabpanel" aria-labelledby="home-tab">
-    <div class="container mb-3">
-      <div class="btn-upload mb-3">
-        <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
-      </div>
-      <% if @spot.videos.empty? %>
-        <p class="text-center">No videos. Be the first to add one!</p>
-      <% else %>
-        <h2 class="ml-5 mt-3">Top Video</h2>
-        <div class="card-video">
-          <%= render 'top_video', spot: @spot, top_video: @top_video %>
+  <ul class="nav tabs-underlined" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#my-socks" role="tab" aria-controls="home" aria-selected="true">Videos</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="profile" aria-selected="false">Reviews</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade py-3 show active" id="my-socks" role="tabpanel" aria-labelledby="home-tab">
+      <div class="container mb-3">
+        <div class="btn-upload mb-3">
+          <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
         </div>
-        <div>
-          <h2 class="ml-5 mt-5">Videos</h2>
-          <%= render 'videos', spot: @spot, videos: @videos %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-
-  <div class="tab-pane fade py-3 mb-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
-  <div class="container mb-3">
-    <div class="btn-upload mb-3">
-       <%= render 'reviews/modal' %>
-    </div>
-    <% if @spot.reviews.empty? %>
-      <div class='container mt-5 text-center'>
-        <p>No reviews yet.</p>
-        <p>Be the first to leave a review for <%= @spot.name %>!</p>
-      </div>
-    <% else %>
-
-
-      <% @spot.reviews.each do |review| %>
-
-          <p><em><%= review.comment %></em></p>
-          <div class="d-flex">
-          <% review.rating.times do %>
-          <p><em><i class="fas fa-star"></i> </em></p>
+        <% if @spot.videos.empty? %>
+          <p class="text-center">No videos. Be the first to add one!</p>
+        <% else %>
+          <h2 class="ml-5 mt-3">Top Video</h2>
+          <div class="card-video">
+            <%= render 'top_video', spot: @spot, top_video: @top_video %>
+          </div>
+          <div>
+            <h2 class="ml-5 mt-5">Videos</h2>
+            <%= render 'videos', spot: @spot, videos: @videos %>
+          </div>
         <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade py-3 mb-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container mb-3">
+        <div class="btn-upload mb-3">
+          <%= render 'reviews/modal' %>
         </div>
-
-      <% end %>
-      <hr>
-
-
-    <% end %>
+        <% if @spot.reviews.empty? %>
+          <div class='container mt-5 text-center'>
+            <p>No reviews yet.</p>
+            <p>Be the first to leave a review for <%= @spot.name %>!</p>
+          </div>
+        <% else %>
+          <% @spot.reviews.each do |review| %>
+            <p><em><%= review.comment %></em></p>
+            <div class="d-flex">
+              <% review.rating.times do %>
+                <p><em><i class="fas fa-star"></i> </em></p>
+              <% end %>
+            </div>
+          <% end %>
+          <hr>
+        <% end %>
+      </div>
+    </div>
   </div>
-  </div>
-</div>
 <% end %>

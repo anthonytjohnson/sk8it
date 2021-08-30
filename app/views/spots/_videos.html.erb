@@ -1,15 +1,15 @@
 <% videos.each do |video| %>
- <div class="card-video mb-5">
+  <div class="card-video mb-5">
     <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
     <div>
-      <% if video.user == current_user %>
+      <% if user_signed_in? && video.user == current_user %>
         <%= link_to dashboard_videos_path do  %>
-        <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
-          <% end %>
-        <% else %>
+          <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
+        <% end %>
+      <% else %>
         <%= link_to user_path(video.user.id) do  %>
-          <%= cl_image_tag video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
-          <% end %>
+          <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
+        <% end %>
       <% end %>
     </div>
     <div class="video-infos" id="video-<%= video.id %>">
@@ -19,11 +19,17 @@
       </div>
       <div class="d-flex align-items-center justify-content-center">
         <p class="mr-5"><%= video.votes %></p>
-        <%= link_to upvote_path(video) do %>
-          <% if current_user.voted_up_on?(video) %>
-            <p ><i class="fas fa-thumbs-up" style="color: #ed9090"></i></p>
-          <% else %>
+        <% if current_user.nil? %>
+          <%= link_to new_user_session_path do %>
             <p><i class="fas fa-thumbs-up"></i></p>
+          <% end %>
+        <% else %>
+          <%= link_to upvote_path(video) do %>
+            <% if current_user.voted_up_on?(video) %>
+              <p ><i class="fas fa-thumbs-up" style="color: #ed9090"></i></p>
+            <% else %>
+              <p><i class="fas fa-thumbs-up"></i></p>
+            <% end %>
           <% end %>
         <% end %>
       </div>

@@ -6,6 +6,7 @@
   <br>
   <div class="container mb-3">
     <% if @user.videos.present? %>
+      <h1>Videos</h1>
       <% @user.videos.each do |video| %>
         <div class="card-video mb-5">
           <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>

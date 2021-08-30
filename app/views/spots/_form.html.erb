@@ -1,19 +1,24 @@
-<div class="container">
-  <%= simple_form_for(@spot) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-    <div class="form-inputs">
+<%= simple_form_for(@spot) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="add-a-spot">
+    <div class="back-button">
+      <%= link_to spots_path do %>
+        <i class="fas fa-arrow-circle-left"></i>
+      <% end %>
+    </div>
+    <h1 class="text-center">Add a Spot</h1>
+    <div id="spot-input">
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :category, collection: ["spot", "shop"], include_blank: false %>
       <%= f.input :address %>
+    </div>
+    <div id="spot-btn-upload">
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, class: 'btn-gradient' %>
-      <%= link_to 'Back', spots_path, class: 'btn-gradient' %>
+    <div class="spot-btn-create">
+      <%= f.button :submit, 'Add spot'%>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

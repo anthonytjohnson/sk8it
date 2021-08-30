@@ -18,13 +18,13 @@
       </div>
     <% else %>
       <% @spot.reviews.each do |review| %>
-        <p><em><i class="fas fa-quote-left"></i><%= review.comment %></em></p>
+        <p><em><i class="fas fa-quote-left"></i> <%= review.comment %></em></p>
         <div class="d-flex">
           <% review.rating.times do %>
             <p class="small p-1"><em><i class="fas fa-star"></i> </em></p>
           <% end %>
         </div>
-      <hr class="mt-3">
+        <hr class="mt-3">
       <% end %>
     <% end %>
   </div>
@@ -84,8 +84,8 @@
                 <p class="small"><em><i class="fas fa-star"></i> </em></p>
               <% end %>
             </div>
+            <hr class="mt-3">
           <% end %>
-          <hr>
         <% end %>
       </div>
     </div>

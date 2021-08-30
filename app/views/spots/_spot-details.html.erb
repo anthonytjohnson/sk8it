@@ -3,22 +3,30 @@
     <h1><%= @spot.name %></h1>
     <p></i><%= @spot.description %></p>
   <p><i class="fas fa-map-marker-alt" id="marker"></i> <%= @spot.address %></p>
-  <div data-controller="carousel" class="swiper-container" id="show">
-    <div class="swiper-wrapper">
-      <% if @spot.photos.attached? %>
-        <% @spot.photos.each do |photo| %>
-          <div class="swiper-slide">
-            <%= cl_image_tag(photo.key)%>
-          </div>
+  <div class="carousel-container">
+    <div data-controller="carousel" class="swiper-container" id="show" data-carousel-options-value='{
+    "pagination": { "el": ".swiper-pagination",
+                    "dynamicBullets": "true" },
+    "navigation": { "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"}}'>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-wrapper">
+        <% if @spot.photos.attached? %>
+          <% @spot.photos.each do |photo| %>
+            <div class="swiper-slide">
+              <%= cl_image_tag(photo.key)%>
+            </div>
+          <% end %>
+        <% else %>
+          <% @spot.photos.each do |photo| %>
+            <div class="swiper-slide">
+              <%= image_tag(photo)%>
+            </div>
+          <% end %>
         <% end %>
-      <% else %>
-        <% @spot.photos.each do |photo| %>
-          <div class="swiper-slide">
-            <%= image_tag(photo)%>
-          </div>
-        <% end %>
-      <% end %>
-
+      </div>
     </div>
   </div>
 </div>

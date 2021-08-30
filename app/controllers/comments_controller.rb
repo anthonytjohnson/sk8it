@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @video = Video.find(params[:video_id])
-    @comment.user = current_user
     @spot = video.spot
     @comment.video = @video
     authorize @comment
@@ -17,6 +16,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:comment, :video_id)
+    params.require(:comment).permit(:comment)
   end
 end

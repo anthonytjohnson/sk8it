@@ -1,4 +1,47 @@
- #show {
-  height: 30rem;
-  width: auto;
+.swiper-slide {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination {
+  align-self: flex-end;
+  position: absolute;
+  bottom: -2rem;
+  justify-self: center;
+  left: 16rem;
+}
+
+.carousel-container {
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.9;
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  transform: scale(0.33);
+  position: relative;
+  background: $sk8it-red;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-family: swiper-icons;
+  font-size: 44px;
+  font-size: var(--swiper-navigation-size);
+  text-transform: none !important;
+  letter-spacing: 0;
+  text-transform: none;
+  font-feature-settings: normal;
+  font-variant: normal;
+  font-variant: initial;
+  line-height: 1;
+  color: $sk8it-red;
 }

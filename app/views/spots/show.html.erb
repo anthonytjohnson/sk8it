@@ -1,6 +1,7 @@
 <%= render 'shared/search' %>
 <%= render 'spot-details' %>
 <% if @spot.category == "shop" %>
+
   <div class="container mb-3">
     <% if current_user.present? %>
       <div class="btn-upload mb-3">
@@ -48,7 +49,7 @@
             <%= link_to "Upload Video", new_user_session_path, class: "btn btn-gradient" %>
           <% end %>
         </div>
-        <% if @spot.videos.empty? %>
+        <% if @spot.videos.empty? %>  
           <p class="text-center">No videos. Be the first to add one!</p>
         <% else %>
           <h2 class="ml-5 mt-3">Top Video</h2>

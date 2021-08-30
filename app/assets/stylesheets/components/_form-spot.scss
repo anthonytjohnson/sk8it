@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
-  background-image: url("levi-frey-unsplash.jpg");
+  background-image: linear-gradient(rgba(34, 40, 49, .6), rgba(48, 71, 94, .3)), url("adrien-vajas-unsplash.jpg");
   background-size: cover;
-  color: $sk8it-gray;
+  font-weight: bold;
+  color: white;
   padding: 3rem;
   margin: 3rem;
   width: auto;
@@ -15,20 +16,25 @@
   position: relative;
 }
 
-.back-button {
+#spot-back-button i {
   font-size: 3rem;
   position: absolute;
   top: 1rem;
-  left: 3.5rem;
+  left: 19rem;
 }
+
 #spot-input input {
   font-size: 2rem;
   border-radius: 1rem;
 }
 
 #spot-btn-upload input {
-  background-color: $sk8it-black;
+  background-color: $sk8it-blue;
   border-radius: 1rem;
+  outline: transparent;
+}
+#spot-btn-upload label {
+  color: $sk8it-gray;
 }
 
 .spot-btn-create {
@@ -37,20 +43,22 @@
   margin-top: 2rem;
 }
 
-.spot-btn-create input {
+#spot-btn-create input {
   color: white;
-  margin-right: 1rem;
+  margin-top: 1rem;
   font-size: 1.5rem;
   border-radius: 4px;
   padding: 0.6rem 0.6rem;
   background: linear-gradient(#eb5e5e, $sk8it-red);
   text-align: center;
+  position: absolute;
+  right: 3rem;
 }
-.spot-btn-create a {
-  color: white;
-  font-size: 1.5rem;
-  padding: 1rem 1rem;
-  border-radius: 4px;
-  background: linear-gradient(#eb5e5e, $sk8it-red);
-  text-align: center;
-}
+// #spot-btn-create a {
+//   color: white;
+//   font-size: 1.5rem;
+//   padding: 1rem 1rem;
+//   border-radius: 4px;
+//   background: linear-gradient(#eb5e5e, $sk8it-red);
+//   text-align: center;
+// }

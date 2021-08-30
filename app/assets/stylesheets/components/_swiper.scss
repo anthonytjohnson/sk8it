@@ -3,18 +3,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.swiper-pagination {
-  align-self: flex-end;
-  position: absolute;
-  bottom: -2rem;
-  justify-self: center;
-  left: 16rem;
+  opacity: 1 !important;
+  &:not(.swiper-slide-active) {
+    opacity: 0 !important;
+  }
 }
 
 .carousel-container {
   position: relative;
+}
+.swiper-pagination {
+  align-self: flex-end;
+  position: absolute;
+  bottom: -3rem;
+  justify-self: center;
+  left: 16rem;
+  margin-bottom: 2rem;
+}
+
+#pagination-index {
+  left: 9rem;
+  bottom: -4rem;
 }
 
 .swiper-pagination-bullet {

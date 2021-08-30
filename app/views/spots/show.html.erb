@@ -44,7 +44,7 @@
       <div class="container mb-3">
         <div class="btn-upload mb-3">
           <% if current_user.present? %>
-            <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
+            <%= render 'videos/modal' %>
           <% else %>
             <%= link_to "Upload Video", new_user_session_path, class: "btn btn-gradient" %>
           <% end %>

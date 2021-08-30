@@ -9,10 +9,10 @@
   object-fit: cover;
 }
 
-.spot h1 {
+.spot #spot-name {
   align-items: center;
-  border-left: 1rem solid $sk8it-blue;
   padding-left: 1rem;
+  border-left: 1rem solid $sk8it-blue;
 }
 .btn-upload {
   display: flex;
@@ -23,4 +23,8 @@
 
 i {
   color: #f05454;
+}
+
+hr {
+   border-top: 1px solid $sk8it-gray;
 }

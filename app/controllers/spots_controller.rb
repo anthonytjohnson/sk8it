@@ -70,6 +70,7 @@ class SpotsController < ApplicationController
     @reviews = @spot.reviews
     @review = Review.new
     @video = Video.new
+    @comment = Comment.new
   end
 
   def new

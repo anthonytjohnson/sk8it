@@ -17,15 +17,17 @@
         <p>Be first to leave a review for <%= @spot.name %>!</p>
       </div>
     <% else %>
-      <% @spot.reviews.each do |review| %>
-        <p><em><%= review.comment %></em></p>
-        <div class="d-flex">
-          <% review.rating.times do %>
-            <p><em><i class="fas fa-star"></i> </em></p>
-          <% end %>
-        </div>
-      <% end %>
-      <hr>
+      <div class="container ml-a">
+        <% @spot.reviews.each do |review| %>
+          <p><em><i class="fas fa-quote-left"></i> <%= review.comment %></em></p>
+          <div class="d-flex">
+            <% review.rating.times do %>
+              <p class="small p-1"><em><i class="fas fa-star"></i> </em></p>
+            <% end %>
+          </div>
+          <hr class="mt-3">
+        <% end %>
+      </div>
     <% end %>
   </div>
 <% end %>
@@ -77,15 +79,17 @@
             <p>Be the first to leave a review for <%= @spot.name %>!</p>
           </div>
         <% else %>
-          <% @spot.reviews.each do |review| %>
-            <p><em><%= review.comment %></em></p>
-            <div class="d-flex">
-              <% review.rating.times do %>
-                <p><em><i class="fas fa-star"></i> </em></p>
-              <% end %>
+          <div class="container ml-4">
+            <% @spot.reviews.each do |review| %>
+              <p><em><i class="fas fa-quote-left"></i> <%= review.comment %></em></p>
+              <div class="d-flex">
+                <% review.rating.times do %>
+                  <p class="small"><em><i class="fas fa-star"></i> </em></p>
+                <% end %>
+              </div>
+              <hr class="mt-3">
             </div>
           <% end %>
-          <hr>
         <% end %>
       </div>
     </div>

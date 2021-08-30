@@ -1,8 +1,19 @@
-<%= simple_form_for [@spot, @review] do |f| %>
-  <%= f.input :comment %>
-  <%= f.input :rating, collection: [1, 2, 3, 4, 5], include_blank: false %>
-  <div class='d-flex justify-content-between'>
-    <%= link_to "Back", spot_path(params[:id]), class: 'btn btn-danger mr-3' %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  </div>
-<% end %>
+  <%= simple_form_for [@spot, @review] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="add-a-review">
+      <div class="back-button">
+        <%= link_to spot_path(@spot) do %>
+          <i class="fas fa-arrow-circle-left"></i>
+        <% end %>
+      </div>
+      <h1 class="text-center">Add a Review for <%= @spot.name %></h1>
+      <div id="review-input">
+        <span><%= f.input :comment %></span>
+      </div>
+      <%= f.input :rating, collection: [1, 2, 3, 4, 5], include_blank: false %>
+      <div class="review-btn-create">
+        <%= f.button :submit, 'Add Review'%>
+      </div>
+    </div>
+  <% end %>

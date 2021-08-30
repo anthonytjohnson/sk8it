@@ -9,23 +9,21 @@
   outline-color: transparent;
   outline-style: none;
   border-style: none;
-  border-bottom: 1rem solid white;
   border-radius: 1rem 0 0 1rem;
-  background: none;
+  color: $sk8it-black;
+  background: $sk8it-gray;
   padding: 0.5rem 1rem;
   :focus {
     outline-color: transparent;
     outline-style: none;
   }
-  color: white;
 }
 .search-bar button {
   border-width: 0;
   outline-color: transparent;
   outline-style: none;
-  border-bottom: 1rem solid white;
   border-radius: 0 1rem 1rem 0;
-  background: none;
+  background: $sk8it-gray;
   padding: 0.5rem 1rem;
   font-size: 2rem;
 }

@@ -69,6 +69,7 @@ class SpotsController < ApplicationController
     authorize @spot
     @reviews = @spot.reviews
     @review = Review.new
+    @video = Video.new
   end
 
   def new

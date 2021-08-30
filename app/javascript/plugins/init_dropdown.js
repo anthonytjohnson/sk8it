@@ -1,9 +1,11 @@
 const initDropdown = () => {
   const icon = document.querySelector(".dropbtn");
   const dropdownContent = document.getElementById("myDropdown");
-  icon.addEventListener("click", () => {
-    dropdownContent.classList.toggle("show");
-  })
+  if (icon != null) {
+    icon.addEventListener("click", () => {
+      dropdownContent.classList.toggle("show");
+    })
+  }
 }
 
 // // Close the dropdown menu if the user clicks outside of it

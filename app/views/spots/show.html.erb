@@ -18,7 +18,7 @@
       </div>
     <% else %>
       <% @spot.reviews.each do |review| %>
-        <p><em><%= review.comment %></em></p>
+        <p><em><i class="fas fa-quote-left"></i><%= review.comment %></em></p>
         <div class="d-flex">
           <% review.rating.times do %>
             <p><em><i class="fas fa-star"></i> </em></p>
@@ -78,7 +78,7 @@
           </div>
         <% else %>
           <% @spot.reviews.each do |review| %>
-            <p><em><%= review.comment %></em></p>
+            <p><em><i class="fas fa-quote-left"></i> <%= review.comment %></em></p>
             <div class="d-flex">
               <% review.rating.times do %>
                 <p><em><i class="fas fa-star"></i> </em></p>

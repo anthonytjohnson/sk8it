@@ -1,6 +1,12 @@
 <%= cl_video_tag(top_video.video.key, controls: true, width: 300, class: "card-img-top") %>
-<%= link_to user_path(top_video.user.id) do  %>
-  <%= cl_image_tag top_video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
+<% if top_video.user == current_user %>
+  <%= link_to dashboard_videos_path do  %>
+    <%= cl_image_tag top_video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
+    <% end %>
+<% else %>
+  <%= link_to user_path(top_video.user.id) do  %>
+    <%= cl_image_tag top_video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
+  <% end %>
 <% end %>
 <div class="video-infos" id="video-<%= top_video.id %>">
   <div>
@@ -10,7 +16,11 @@
   <div class="d-flex align-items-center justify-content-center">
     <p class="mr-5"><%= top_video.votes %></p>
     <%= link_to upvote_path(top_video) do %>
-      <p><i class="fas fa-thumbs-up"></i></p>
+      <% if current_user.voted_up_on?(top_video) %>
+        <p ><i class="fas fa-thumbs-up" style="color: #ed9090"></i></p>
+      <% else %>
+        <p><i class="fas fa-thumbs-up"></i></p>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -30,7 +30,18 @@ class VideosController < ApplicationController
     if @user.nil?
       redirect_to new_user_session_path
     else
-      @user.voted_up_on?(@video) ? @video.unliked_by(@user) : @video.liked_by(@user)
+      # next line will use the ruby gem to count votes
+      # @user.voted_up_on?(@video) ? @video.unliked_by(@user) : @video.liked_by(@user)
+      # next line will count the votes variable on the video
+      # @user.voted_up_on?(@video) ? @video.votes -= 1 : @video.votes += 1
+      if @user.voted_up_on?(@video)
+        @video.unliked_by(@user)
+        @video.votes -= 1
+      else
+        @video.liked_by(@user)
+        @video.votes += 1
+      end
+      @video.save
       # redirect back to show page
       redirect_to spot_path(@spot, anchor: "video-#{@video.id}")
     end
@@ -39,6 +50,6 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:caption, :video)
+    params.require(:video).permit(:caption, :video, :votes)
   end
 end

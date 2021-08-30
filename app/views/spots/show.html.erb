@@ -1,7 +1,6 @@
 <%= render 'shared/search' %>
 <%= render 'spot-details' %>
 <% if @spot.category == "shop" %>
-<%= render 'review_carousel' %>
 <div class="container mb-3">
     <% if current_user.present? %>
     <div class="btn-upload mb-3">
@@ -100,15 +99,32 @@
           <div class="d-flex">
           <% review.rating.times do %>
           <p><em><i class="fas fa-star"></i> </em></p>
+
         <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade py-3 mb-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container mb-3">
+        <div class="btn-upload mb-3">
+          <%= render 'reviews/modal' %>
         </div>
-
-      <% end %>
-      <hr>
-
-
-    <% end %>
+        <% if @spot.reviews.empty? %>
+          <div class='container mt-5 text-center'>
+            <p>No reviews yet.</p>
+            <p>Be the first to leave a review for <%= @spot.name %>!</p>
+          </div>
+        <% else %>
+          <% @spot.reviews.each do |review| %>
+            <p><em><%= review.comment %></em></p>
+            <div class="d-flex">
+              <% review.rating.times do %>
+                <p><em><i class="fas fa-star"></i> </em></p>
+              <% end %>
+            </div>
+          <% end %>
+          <hr>
+        <% end %>
+      </div>
+    </div>
   </div>
-  </div>
-</div>
 <% end %>

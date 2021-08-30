@@ -1,4 +1,21 @@
-<h4><%= link_to spot.name.capitalize, spot %></h4>
-<%= link_to spot.photos.attached? ? cl_image_tag(spot.photos[0].key, :width => 120, :height => 120, :crop => :limit
-) : image_tag(spot.photos[0], :width => 120, :height => 120, :crop => :limit
-), spot %>
+<div data-controller="carousel" class="swiper-container">
+  <div class="swiper-wrapper">
+    <% spot.photos.each do |photo| %>
+      <div class="swiper-slide">
+        <div class="spot-preview" style="width: 100vw; background-color: #222831;">
+          <%=link_to cl_image_tag(photo.key, style: 'height: 34vh; width: 100vw;'), spot %>
+          <div>
+            <% link_to spot do %>
+              <%= cl_image_tag(photo.key)%>
+            <% end %>
+          </div>
+          <div class="ml-3">
+            <h5 class="spot-info">
+              <%= link_to spot.name.capitalize, spot %>
+            </h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

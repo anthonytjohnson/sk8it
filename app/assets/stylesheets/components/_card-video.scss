@@ -1,0 +1,31 @@
+
+.card-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  width: auto;
+  position: relative;
+}
+.card-video h2 {
+  display: flex;
+  justify-content: left;
+}
+
+.card-video .avatar-bordered {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.video-infos {
+  background: #30475e;
+  padding: 1rem;
+  padding-bottom: .2rem;
+  line-height: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+}

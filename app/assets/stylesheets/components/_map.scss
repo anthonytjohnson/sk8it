@@ -1,7 +1,5 @@
 .mapboxgl-popup {
-  height: 100%;
-  width: auto;
-  position: absolute;
+  max-width: auto;
   z-index: 9999;
 }
 
@@ -11,5 +9,9 @@
 
 .popups .mapboxgl-popup-content {
   background: $sk8it-blue;
-   border-radius: 2rem;
+  border-radius: 2rem;
+}
+
+#map {
+  border-radius: 2rem;
 }

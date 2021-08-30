@@ -1,12 +1,10 @@
 .spot-preview {
   display: flex;
-  display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
   border-radius: 1rem;
-  /* border-top: 0; */
 }
 
 .spot-preview img {
@@ -23,9 +21,4 @@
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-}
-
-#map {
-  border: 1rem solid $sk8it-black;
-  border-radius: 2rem 2rem 0rem 0rem;
 }

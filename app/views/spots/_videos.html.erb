@@ -2,7 +2,11 @@
   <div class="card-video mb-5">
     <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
     <div class="video-infos" id="video-<%= video.id %>">
+      <div>
+      <%= link_to user_path(video.user.id) do  %>
       <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
+      <% end %>
+      </div>
       <div>
         <p><i class="fas fa-quote-left"></i> <%= video.caption.capitalize %></p>
         <p>Uploaded by: <%= video.user.username %></p>

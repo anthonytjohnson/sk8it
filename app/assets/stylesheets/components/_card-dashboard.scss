@@ -1,8 +1,9 @@
 .card-profile {
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid grey;
-  box-shadow: 1px 1px 3px grey;
+  border: 1px solid $sk8it-red;
+  box-shadow: 1px 1px 3px $sk8it-red;
+  background-color: $sk8it-blue;
   h1 {
     margin-bottom: 16px;
   }

@@ -1,14 +1,13 @@
 <div class="container mt-3 text-center">
   <div class="card-profile">
-    <h1>My Profile</h1>
-    <p><%= "Name: #{current_user.username}" %></p>
-    <p><%= "Email: #{current_user.email}" %></p>
-    <p><%= "Videos added: #{current_user.videos.count}" %></p>
-    <p><%#= "Reviews left: #{current_user.reviews.count}" %></p>
+    <%= cl_image_tag current_user.photo.attached? ? cl_image_path(current_user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-large" %>
+    <h1 class="mt-3"><%= "#{current_user.username}" %></h1>
+    <h2><%= "#{current_user.email}" %></h2>
   </div>
   <br>
   <div class="container mb-3">
     <% if current_user.videos.present? %>
+      <h1>Your Videos</h1>
       <% current_user.videos.each do |video| %>
         <div class="card-video mb-5">
           <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>

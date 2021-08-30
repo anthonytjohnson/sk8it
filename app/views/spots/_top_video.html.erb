@@ -1,8 +1,8 @@
 <%= cl_video_tag(top_video.video.key, controls: true, width: 300, class: "card-img-top") %>
-<div class="video-infos" id="video-<%= top_video.id %>">
-  <%= link_to user_path(top_video.user.id) do  %>
+<%= link_to user_path(top_video.user.id) do  %>
   <%= cl_image_tag top_video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
-  <% end %>
+<% end %>
+<div class="video-infos" id="video-<%= top_video.id %>">
   <div>
     <p><i class="fas fa-quote-left"></i> <%= top_video.caption %></p>
     <p>Uploaded by: <%= top_video.user.username %></p>

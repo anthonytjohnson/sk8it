@@ -49,7 +49,7 @@
             <%= link_to "Upload Video", new_user_session_path, class: "btn btn-gradient" %>
           <% end %>
         </div>
-        <% if @spot.videos.empty? %>  
+        <% if @spot.videos.empty? %>
           <p class="text-center">No videos. Be the first to add one!</p>
         <% else %>
           <h2 class="ml-5 mt-3">Top Video</h2>
@@ -66,7 +66,11 @@
     <div class="tab-pane fade py-3 mb-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
       <div class="container mb-3">
         <div class="btn-upload mb-3">
-          <%= render 'reviews/modal' %>
+          <% if current_user.present? %>
+            <%= render 'reviews/modal' %>
+          <% else %>
+            <%= link_to "Review", new_user_session_path, class: "btn btn-gradient" %>
+          <% end %>
         </div>
         <% if @spot.reviews.empty? %>
           <div class='container mt-5 text-center'>

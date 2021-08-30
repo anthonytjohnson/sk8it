@@ -2,12 +2,12 @@
   <div class="card-video mb-5">
     <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
     <div>
-      <% if current_user.nil?  %>
-        <%= link_to user_path(video.user.id) do  %>
+      <% if user_signed_in? && video.user == current_user %>
+        <%= link_to dashboard_videos_path do  %>
           <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
         <% end %>
-      <% elsif video.user == current_user %>
-        <%= link_to dashboard_videos_path do  %>
+      <% else %>
+        <%= link_to user_path(video.user.id) do  %>
           <%= cl_image_tag video.user.photo.attached? ? cl_image_path(video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
         <% end %>
       <% end %>

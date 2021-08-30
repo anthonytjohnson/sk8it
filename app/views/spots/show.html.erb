@@ -20,7 +20,11 @@
   <div class="tab-pane fade py-3 show active" id="my-socks" role="tabpanel" aria-labelledby="home-tab">
     <div class="container mb-3">
       <div class="btn-upload mb-3">
-        <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
+        <% if current_user.present? %>
+          <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
+        <% else %>
+          <%= link_to "Upload Video", new_user_session_path, class: "btn btn-gradient" %>
+        <% end %>
       </div>
       <% if @spot.videos.empty? %>
         <p class="text-center">No videos. Be the first to add one!</p>

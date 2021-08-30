@@ -1,14 +1,13 @@
 <%= render 'shared/search' %>
 <%= render 'spot-details' %>
 <% if @spot.category == "shop" %>
-
-  <div class="container mb-3">
+  <div class="container my-3">
     <% if current_user.present? %>
-      <div class="btn-upload mb-3">
+      <div class="btn-upload my-3">
         <%= render 'reviews/modal' %>
       </div>
     <% else %>
-      <div class="btn-upload mb-3">
+      <div class="btn-upload my-3">
         <%= link_to "Review", new_user_session_path, class: "btn btn-gradient" %>
       <% end %>
     </div>
@@ -41,8 +40,8 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade py-3 show active" id="my-socks" role="tabpanel" aria-labelledby="home-tab">
-      <div class="container mb-3">
-        <div class="btn-upload mb-3">
+      <div class="container my-3">
+        <div class="btn-upload my-3">
           <% if current_user.present? %>
             <%= link_to "Upload Video", new_spot_video_path(@spot), class: "btn btn-gradient" %>
           <% else %>
@@ -63,9 +62,9 @@
         <% end %>
       </div>
     </div>
-    <div class="tab-pane fade py-3 mb-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
-      <div class="container mb-3">
-        <div class="btn-upload mb-3">
+    <div class="tab-pane fade py-3 my-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container my-3">
+        <div class="btn-upload my-3">
           <% if current_user.present? %>
             <%= render 'reviews/modal' %>
           <% else %>

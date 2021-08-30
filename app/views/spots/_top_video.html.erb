@@ -1,10 +1,10 @@
 <%= cl_video_tag(top_video.video.key, controls: true, width: 300, class: "card-img-top") %>
-<% if current_user.nil? %>
-  <%= link_to user_path(top_video.user.id) do  %>
+<% if user_signed_in? && top_video.user == current_user %>
+  <%= link_to dashboard_videos_path do  %>
     <%= cl_image_tag top_video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
   <% end %>
-<% elsif top_video.user == current_user %>
-  <%= link_to dashboard_videos_path do  %>
+<% else %>
+  <%= link_to user_path(top_video.user.id) do  %>
     <%= cl_image_tag top_video.user.photo.attached? ? cl_image_path(top_video.user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered" %>
   <% end %>
 <% end %>

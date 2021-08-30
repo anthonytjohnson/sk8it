@@ -1,10 +1,6 @@
 <%= render 'shared/search' %>
 <%= render 'spot-details' %>
 <% if @spot.category == "shop" %>
-<<<<<<< HEAD
-=======
-
->>>>>>> a8d7489361d0af0c2b6297ca72937efaff33e10a
   <div class="container mb-3">
     <% if current_user.present? %>
       <div class="btn-upload mb-3">
@@ -52,11 +48,7 @@
             <%= link_to "Upload Video", new_user_session_path, class: "btn btn-gradient" %>
           <% end %>
         </div>
-<<<<<<< HEAD
         <% if @spot.videos.empty? %>
-=======
-        <% if @spot.videos.empty? %>  
->>>>>>> a8d7489361d0af0c2b6297ca72937efaff33e10a
           <p class="text-center">No videos. Be the first to add one!</p>
         <% else %>
           <h2 class="ml-5 mt-3">Top Video</h2>
@@ -72,12 +64,10 @@
     </div>
     <div class="tab-pane fade py-3 mb-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
       <div class="container mb-3">
-        <% if current_user.present? %>
-          <div class="btn-upload mb-3">
+        <div class="btn-upload mb-3">
+          <% if current_user.present? %>
             <%= render 'reviews/modal' %>
-          </div>
-        <% else %>
-          <div class="btn-upload mb-3">
+          <% else %>
             <%= link_to "Review", new_user_session_path, class: "btn btn-gradient" %>
           <% end %>
         </div>
@@ -94,29 +84,10 @@
                 <p><em><i class="fas fa-star"></i> </em></p>
               <% end %>
             </div>
-          </div>
-          <div class="tab-pane fade py-3 mb-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="container mb-3">
-              <div class="btn-upload mb-3">
-                <%= render 'reviews/modal' %>
-              </div>
-              <% if @spot.reviews.empty? %>
-                <div class='container mt-5 text-center'>
-                  <p>No reviews yet.</p>
-                  <p>Be the first to leave a review for <%= @spot.name %>!</p>
-                </div>
-              <% else %>
-                <% @spot.reviews.each do |review| %>
-                  <p><em><%= review.comment %></em></p>
-                  <div class="d-flex">
-                    <% review.rating.times do %>
-                      <p><em><i class="fas fa-star"></i> </em></p>
-                    <% end %>
-                  </div>
-                <% end %>
-                <hr>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+          <% end %>
+          <hr>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

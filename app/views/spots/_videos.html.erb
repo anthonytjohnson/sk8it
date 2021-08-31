@@ -32,7 +32,25 @@
             <% end %>
           <% end %>
         <% end %>
+        <p><i onclick="commentsToggle(<%= video.id %>)", class="fas fa-comments comment-list"></i></p>
       </div>
+    </div>
+    <div class="comments" id="comments-<%= video.id %>" >
+        <%= render 'comments/modal', video: video %>
+      <% video.comments.each do |comment| %>
+        <p><em><%= comment.comment %></em></p>
+      <% end %>
     </div>
   </div>
 <% end %>
+
+<script>
+  const commentsToggle = (video) => {
+  let x = document.getElementById(`comments-${video}`);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+};
+</script>

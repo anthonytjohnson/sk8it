@@ -1,0 +1,7 @@
+<%= simple_form_for [video, @comment] do |f| %>
+  <%= f.input :comment %>
+  <div class='d-flex justify-content-between'>
+    <%= link_to "Back", spot_path(params[:id]), class: 'btn btn-danger mr-3' %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

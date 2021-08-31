@@ -6,6 +6,18 @@
   color: black;
 }
 
+.modal-comment {
+  font-size: 2rem;
+}
+
+.comments {
+  display: none;
+}
+
+.comment-list {
+  margin-left: 1em;
+}
+  
 .modal-style {
   background: $sk8it-black;
   margin: 0;

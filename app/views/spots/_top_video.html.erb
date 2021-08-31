@@ -12,12 +12,25 @@
     <%= link_to upvote_path(top_video) do %>
       <p><i class="fas fa-thumbs-up"></i></p>
     <% end %>
-    <%= render 'comments/modal', video: top_video %>
+    <p><i onclick="commentsToggle(<%= top_video.id %>)", class="fas fa-comments comment-list"></i></p>
+
 
   </div>
 </div>
-<div class="comments">
+<div class="comments" id="comments-<%= top_video.id %>" >
+  <%= render 'comments/modal', video: top_video %>
   <% top_video.comments.each do |comment| %>
     <p><em><%= comment.comment %></em></p>
   <% end %>
 </div>
+
+<script>
+  const commentsToggle = (video) => {
+  let x = document.getElementById(`comments-${video}`);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+};
+</script>

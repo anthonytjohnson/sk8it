@@ -2,7 +2,7 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="add-a-spot">
-    <div class="back-button" id="spot-back-button">
+    <div class="back-button">
       <%= link_to spots_path do %>
         <i class="fas fa-arrow-circle-left"></i>
       <% end %>

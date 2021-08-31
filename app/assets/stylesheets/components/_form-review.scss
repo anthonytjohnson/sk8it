@@ -15,12 +15,6 @@
   position: relative;
 }
 
-.back-button {
-  font-size: 3rem;
-  position: absolute;
-  top: 1rem;
-  left: 3.5rem;
-}
 #review-input input {
   font-size: 2rem;
   border-radius: 1rem;
@@ -53,4 +47,16 @@
   border-radius: 4px;
   background: linear-gradient(#eb5e5e, $sk8it-red);
   text-align: center;
+}
+
+#review-btn-create input {
+  color: white;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  padding: 0.6rem 0.6rem;
+  background: linear-gradient(#eb5e5e, $sk8it-red);
+  text-align: center;
+  position: absolute;
+  right: 3rem;
 }

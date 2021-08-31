@@ -12,7 +12,7 @@
         <span><%= f.input :comment %></span>
       </div>
       <%= f.input :rating, collection: [1, 2, 3, 4, 5], include_blank: false %>
-      <div class="review-btn-create">
+      <div class="review-btn-create" id="review-btn-create">
         <%= f.button :submit, 'Add Review'%>
       </div>
     </div>

@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to spot_path(@spot), notice: 'Review added!'
     else
-      render :new
+      redirect_to spot_path(@spot), notice: 'Review not added, min 10 characters'
     end
   end
 

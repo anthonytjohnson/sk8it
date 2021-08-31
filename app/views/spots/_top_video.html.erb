@@ -13,5 +13,11 @@
       <p><i class="fas fa-thumbs-up"></i></p>
     <% end %>
     <%= render 'comments/modal', video: top_video %>
+
   </div>
+</div>
+<div class="comments">
+  <% top_video.comments.each do |comment| %>
+    <p><em><%= comment.comment %></em></p>
+  <% end %>
 </div>

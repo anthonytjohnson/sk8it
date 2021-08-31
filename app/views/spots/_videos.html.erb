@@ -17,12 +17,13 @@
           <p><i class="fas fa-thumbs-up"></i></p>
         <% end %>
         <%= render 'comments/modal', video: video %>
+        <p><i onclick="commentsToggle(<%= video.id %>)", class="fas fa-thumbs-up"></i></p>
       </div>
     </div>
-    <div class="comments">
-    <% video.comments.each do |comment| %>
-    <p><em><%= comment.comment %></em></p>
-    <% end %>
+    <div class="comments" id="comment-<%= video.id %>" >
+      <% video.comments.each do |comment| %>
+        <p><em><%= comment.comment %></em></p>
+      <% end %>
     </div>
   </div>
 <% end %>

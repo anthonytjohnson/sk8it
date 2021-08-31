@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
-<div class="text-center ml-2" data-toggle="modal" data-target="#comment-<%= video.id %>">
-   <i class="fas fa-comment modal-comment"></i>
+<div class="text-center mt-2" data-toggle="modal" data-target="#comment-<%= video.id %>">
+   <i class="fas fa-comment-medical modal-comment"></i>
 </div>
 <!-- Modal -->
 <div class="modal fade p-2" id="comment-<%= video.id %>" tabindex="-1" aria-labelledby="commentLabel" aria-hidden="true">
@@ -13,7 +13,6 @@
         </button>
       </div>
       <div class="modal-body rounded p-3">
-        <p>Hello<%= video.id  %> <%= video.caption %></p>
         <%= render 'comments/form', video: video %>
       </div>
     </div>

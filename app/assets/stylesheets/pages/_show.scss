@@ -2,17 +2,17 @@
   margin: 1rem;
 }
 
-.spot img {
+.spot .carousel-container img {
   justify-content: center;
   width: 100%;
   height: 30rem;
   object-fit: cover;
 }
 
-.spot h1 {
+.spot #spot-name {
   align-items: center;
-  border-left: 1rem solid $sk8it-blue;
   padding-left: 1rem;
+  border-left: 1rem solid $sk8it-blue;
 }
 .btn-upload {
   display: flex;
@@ -25,33 +25,6 @@ i {
   color: #f05454;
 }
 
-.card-video {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-  width: auto;
-  position: relative;
-}
-.card-video h2 {
-  display: flex;
-  justify-content: left;
-}
-
-.card-video .avatar-bordered {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-.video-infos {
-  background: #30475e;
-  padding: 1rem;
-  padding-bottom: .2rem;
-  line-height: 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  width: 100%;
+hr {
+   border-top: 1px solid $sk8it-gray;
 }

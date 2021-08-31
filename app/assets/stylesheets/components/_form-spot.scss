@@ -1,55 +1,53 @@
-.add-a-video {
+.add-a-spot {
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
-  background-image: url("levi-frey-unsplash.jpg");
+  background-image: linear-gradient(
+      rgba(34, 40, 49, 0.6),
+      rgba(48, 71, 94, 0.3)
+    ),
+    url("adrien-vajas-unsplash.jpg");
   background-size: cover;
+  font-weight: bold;
   color: white;
   padding: 3rem;
   margin: 3rem;
   width: auto;
-  height: 50vh;
+  height: 70vh;
   border-radius: 1rem;
   box-shadow: 0.1rem 0.1rem 0.5rem black;
   justify-content: center;
   position: relative;
 }
 
-#video-input input {
+.back-button i {
+  font-size: 3rem;
+  position: absolute;
+  top: 2rem;
+  left: 22rem;
+}
+
+#spot-input input {
   font-size: 2rem;
   border-radius: 1rem;
 }
 
-#video-btn-upload input {
-  background-color: $sk8it-black;
+#spot-btn-upload input {
+  background-color: $sk8it-blue;
   border-radius: 1rem;
+  outline: transparent;
+}
+#spot-btn-upload label {
+  color: $sk8it-gray;
 }
 
-.video-btn-create {
+.spot-btn-create {
   display: flex;
   align-items: center;
   margin-top: 2rem;
 }
 
-.video-btn-create input {
-  color: white;
-  margin-right: 1rem;
-  font-size: 1.5rem;
-  border-radius: 4px;
-  padding: 0.6rem 0.6rem;
-  background: linear-gradient(#eb5e5e, $sk8it-red);
-  text-align: center;
-}
-.video-btn-create a {
-  color: white;
-  font-size: 1.5rem;
-  padding: 1rem 1rem;
-  border-radius: 4px;
-  background: linear-gradient(#eb5e5e, $sk8it-red);
-  text-align: center;
-}
-
-#video-btn-create input {
+#spot-btn-create input {
   color: white;
   margin-top: 1rem;
   font-size: 1.5rem;

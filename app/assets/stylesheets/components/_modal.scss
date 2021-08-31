@@ -1,8 +1,8 @@
-.modal-titles {
+.modal-titles #reviewLabel {
   color: black;
 }
 
-.required {
+.required #reviewLabel {
   color: black;
 }
 
@@ -16,4 +16,11 @@
 
 .comment-list {
   margin-left: 1em;
+}
+  
+.modal-style {
+  background: $sk8it-black;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
 }

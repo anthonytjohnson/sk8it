@@ -1,10 +1,10 @@
-.add-a-video {
+.add-a-review {
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
-  background-image: url("levi-frey-unsplash.jpg");
+  background-image: url("oleg-gospodarec-unsplash.jpg");
   background-size: cover;
-  color: white;
+  color: $sk8it-gray;
   padding: 3rem;
   margin: 3rem;
   width: auto;
@@ -15,23 +15,23 @@
   position: relative;
 }
 
-#video-input input {
+#review-input input {
   font-size: 2rem;
   border-radius: 1rem;
 }
 
-#video-btn-upload input {
+#review-btn-upload input {
   background-color: $sk8it-black;
   border-radius: 1rem;
 }
 
-.video-btn-create {
+.review-btn-create {
   display: flex;
   align-items: center;
   margin-top: 2rem;
 }
 
-.video-btn-create input {
+.review-btn-create input {
   color: white;
   margin-right: 1rem;
   font-size: 1.5rem;
@@ -40,7 +40,7 @@
   background: linear-gradient(#eb5e5e, $sk8it-red);
   text-align: center;
 }
-.video-btn-create a {
+.review-btn-create a {
   color: white;
   font-size: 1.5rem;
   padding: 1rem 1rem;
@@ -49,7 +49,7 @@
   text-align: center;
 }
 
-#video-btn-create input {
+#review-btn-create input {
   color: white;
   margin-top: 1rem;
   font-size: 1.5rem;

@@ -19,5 +19,10 @@
         <%= render 'comments/modal', video: video %>
       </div>
     </div>
+    <div class="comments">
+    <% video.comments.each do |comment| %>
+    <p><em><%= comment.comment %></em></p>
+    <% end %>
+    </div>
   </div>
 <% end %>

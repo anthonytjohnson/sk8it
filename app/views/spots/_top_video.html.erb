@@ -12,5 +12,6 @@
     <%= link_to upvote_path(top_video) do %>
       <p><i class="fas fa-thumbs-up"></i></p>
     <% end %>
+    <%= render 'comments/modal', video: top_video %>
   </div>
 </div>

@@ -4,7 +4,7 @@
   font-size: 1.5rem;
   background-image: url("levi-frey-unsplash.jpg");
   background-size: cover;
-  color: $sk8it-gray;
+  color: white;
   padding: 3rem;
   margin: 3rem;
   width: auto;
@@ -13,13 +13,6 @@
   box-shadow: 0.1rem 0.1rem 0.5rem black;
   justify-content: center;
   position: relative;
-}
-
-.back-button {
-  font-size: 3rem;
-  position: absolute;
-  top: 1rem;
-  left: 3.5rem;
 }
 
 #video-input input {
@@ -54,4 +47,16 @@
   border-radius: 4px;
   background: linear-gradient(#eb5e5e, $sk8it-red);
   text-align: center;
+}
+
+#video-btn-create input {
+  color: white;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  padding: 0.6rem 0.6rem;
+  background: linear-gradient(#eb5e5e, $sk8it-red);
+  text-align: center;
+  position: absolute;
+  right: 3rem;
 }

@@ -2,14 +2,14 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @video = Video.find(params[:video_id])
-    @spot = video.spot
+    @spot = @video.spot
     @comment.video = @video
     authorize @comment
 
     if @comment.save
       redirect_to spot_path(@spot), notice: 'Comment added!'
     else
-      render :new
+      redirect_to spot_path(@spot), notice: 'Comment did not save'
     end
   end
 

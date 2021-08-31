@@ -1,9 +1,9 @@
 <!-- Button trigger modal -->
-<div class="btn btn-gradient text-center ml-2" data-toggle="modal" data-target="#comment">
-   Comment
+<div class="text-center ml-2" data-toggle="modal" data-target="#comment-<%= video.id %>">
+   <i class="fas fa-comment modal-comment"></i>
 </div>
 <!-- Modal -->
-<div class="modal fade p-2" id="review" tabindex="-1" aria-labelledby="commentLabel" aria-hidden="true">
+<div class="modal fade p-2" id="comment-<%= video.id %>" tabindex="-1" aria-labelledby="commentLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -13,7 +13,8 @@
         </button>
       </div>
       <div class="modal-body rounded p-3">
-        <%= render 'comments/form' %>
+        <p>Hello<%= video.id  %> <%= video.caption %></p>
+        <%= render 'comments/form', video: video %>
       </div>
     </div>
   </div>

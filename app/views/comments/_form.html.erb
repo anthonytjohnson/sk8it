@@ -1,4 +1,4 @@
-<%= simple_form_for [video, @comment] do |f| %>
+<%= simple_form_for([video, @comment], remote: true) do |f| %>
   <div id="add-a-comment">
     <%= f.input :comment %>
     <div class='d-flex justify-content-between add-a-comment'>

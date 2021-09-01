@@ -43,7 +43,7 @@ class VideosController < ApplicationController
       end
       @video.save
       # redirect back to show page
-      redirect_to spot_path(@spot, anchor: "video-#{@video.id}")
+      # redirect_to spot_path(@spot, anchor: "video-#{@video.id}")
     end
   end
 

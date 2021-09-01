@@ -73,6 +73,10 @@ class SpotsController < ApplicationController
     @review = Review.new
     @video = Video.new
     @comment = Comment.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

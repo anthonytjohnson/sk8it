@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :update] do
     member do
       get :profile
     end

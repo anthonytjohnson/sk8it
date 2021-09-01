@@ -1,0 +1,15 @@
+<div id="checked_in">
+  <% if @spot.check_ins.length > 0 %>
+    <% @spot.check_ins.each do |user| %>
+      <% if user_signed_in? && user == current_user %>
+        <%= link_to dashboard_videos_path do %>
+          <%= cl_image_tag user.photo.attached? ? cl_image_path(user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered overlaid" %>
+        <% end %>
+      <% else %>
+        <%= link_to user_path(user.id) do %>
+          <%= cl_image_tag user.photo.attached? ? cl_image_path(user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered overlaid" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

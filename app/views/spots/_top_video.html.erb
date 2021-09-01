@@ -27,9 +27,8 @@
         <% end %>
       <% end %>
     <% end %>
+    <p><i onclick="commentsToggle(<%= top_video.id %>)", class="fas fa-comments comment-list"></i></p>
     <p><i data-video-id="<%= top_video.id %>" class="fas fa-comments comment-list"></i></p>
-
-
   </div>
 </div>
 <div class="comments" id="comments-<%= top_video.id %>" >

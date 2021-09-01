@@ -1,6 +1,6 @@
 <div class="spot">
   <div class="show-head">
-    <h1 id="spot-name"><%= @spot.name %></h1>
+    <h1 id="spot-name" data-lat="<%= @spot.latitude %>" data-long="<%= @spot.longitude %>"><%= @spot.name %></h1>
     <p></i><%= @spot.description %></p>
   <p><i class="fas fa-map-marker-alt" id="marker"></i> <%= @spot.address %></p>
   <div class="carousel-container">

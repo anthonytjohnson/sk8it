@@ -33,6 +33,7 @@ gem 'acts_as_votable'
 gem 'devise'
 gem 'pundit'
 
+gem "mini_magick"
 gem 'exifr'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'cloudinary', '~> 1.16.0'

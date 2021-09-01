@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
     authorize @review
     if @review.save
       redirect_to spot_path(@spot), notice: 'Review added!'
-    # else
-    #   render :new
+    else
+      redirect_to spot_path(@spot), notice: 'Review not added, min 10 characters'
     end
   end
 

@@ -1,3 +1,5 @@
+require 'exifr/jpeg'
+
 class SpotsController < ApplicationController
   before_action :authenticate_user!, except: [ :home, :index, :show ]
 
@@ -82,12 +84,42 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     @spot.user = current_user
     authorize @spot
-    if @spot.save
-      redirect_to @spot, notice: 'Spot added!'
+    if @spot.address.blank?
+     gps_latitude = MiniMagick::Image.open(spot_params[:photos][0].tempfile.path).exif["GPSLatitude"]
+     result = gps_latitude.split(',')
+      latitude_sum = (result[0].split("/")[0].to_i) + ((result[1].split("/")[0].to_i)/60.0) +  (((result[2].split("/")[0].to_i)/(result[2].split("/")[1]).to_f)/3600.0)
+      @spot.latitude = latitude_sum
+       result = gps_latitude.split(',')
+      latitude_sum = (result[0].split("/")[0].to_i) + ((result[1].split("/")[0].to_i)/60.0) +  (((result[2].split("/")[0].to_i)/(result[2].split("/")[1]).to_f)/3600.0)
+      @spot.latitude = latitude_sum
+      gps_longitude = MiniMagick::Image.open(spot_params[:photos][0].tempfile.path).exif["GPSLongitude"]
+      result = gps_longitude.split(',')
+      longitude_sum = (result[0].split("/")[0].to_i) + ((result[1].split("/")[0].to_i)/60.0) +  (((result[2].split("/")[0].to_i)/(result[2].split("/")[1]).to_f)/3600.0)
+      @spot.longitude = longitude_sum
+      @spot.address = @spot.reverse_geocode
+      respond_to do |format|
+        format.html
+        format.js
+      end
+      @spot.address = @spot.reverse_geocode
     else
-      render :new
+      if @spot.save
+        redirect_to @spot, notice: 'Spot added!'
+      else
+        redirect_to @spot, notice: 'Spot added!'
+      end
     end
   end
+
+
+
+
+
+
+
+
+
+
 
   private
 

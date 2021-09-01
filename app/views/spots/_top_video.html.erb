@@ -22,9 +22,9 @@
     <% else %>
       <%= link_to upvote_path(top_video), remote: true do %>
         <% if current_user.voted_up_on?(top_video) %>
-          <p ><i class="fas fa-thumbs-up" style="color: #ed9090"></i></p>
+          <p ><i class="fas fa-thumbs-up mystyle" id="thumbs-video-<%= top_video.id %>"></i></p>
         <% else %>
-          <p><i class="fas fa-thumbs-up"></i></p>
+          <p><i class="fas fa-thumbs-up" id="thumbs-video-<%= top_video.id %>"></i></p>
         <% end %>
       <% end %>
     <% end %>

@@ -22,6 +22,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initDropdown } from '../plugins/init_dropdown';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { commentsToggle } from '../plugins/commentstoggle';
+import { likeToggle } from '../plugins/init_liketoggle';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -30,6 +31,7 @@ document.addEventListener('turbolinks:load', () => {
   initDropdown();
   initAutocomplete();
   commentsToggle();
+  likeToggle();
 });
 
 

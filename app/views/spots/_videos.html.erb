@@ -37,7 +37,7 @@
     <div class="comments" id="comments-<%= video.id %>" >
         <%= render 'comments/modal', video: video %>
       <% video.comments.each do |comment| %>
-        <p><em><%= comment.comment %></em></p>
+        <i class="fas fa-quote-left"></i><p><em><%= comment.comment %></em></p>
       <% end %>
     </div>
   </div>

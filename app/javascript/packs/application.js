@@ -21,7 +21,7 @@ import 'swiper/swiper-bundle.min.css'
 import { initMapbox } from '../plugins/init_mapbox';
 import { initDropdown } from '../plugins/init_dropdown';
 import { initAutocomplete } from '../plugins/init_autocomplete';
-// import { commentsToggle } from '../plugins/commentstoggle';
+import { initUserLocation } from '../plugins/init_userlocation';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -29,7 +29,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initDropdown();
   initAutocomplete();
-  // commentsToggle();
+  initUserLocation();
 });
 
 

@@ -113,3 +113,11 @@
     </div>
   </div>
 <% end %>
+<% if current_user %>
+  <div style="display: none">
+    <%= simple_form_for current_user, html: {id:"check-in-form"}, remote: true do |f| %>
+      <%= f.input :spot_id, input_html: {value: @spot.id} %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+<% end %>

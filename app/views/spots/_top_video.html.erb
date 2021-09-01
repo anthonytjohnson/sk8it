@@ -29,8 +29,6 @@
       <% end %>
     <% end %>
     <p><i onclick="commentsToggle(<%= top_video.id %>)", class="fas fa-comments comment-list"></i></p>
-
-
   </div>
 </div>
 <div class="comments" id="comments-<%= top_video.id %>" >
@@ -39,14 +37,3 @@
     <p><em><%= comment.comment %></em></p>
   <% end %>
 </div>
-
-<script>
-  const commentsToggle = (video) => {
-  let x = document.getElementById(`comments-${video}`);
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-};
-</script>

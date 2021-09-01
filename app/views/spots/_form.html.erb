@@ -11,7 +11,7 @@
     <div id="spot-input">
       <%= f.input :name %>
       <%= f.input :description %>
-      <%= f.input :category, collection: ["spot", "shop"], include_blank: false %>
+      <%= f.input :category, as: :radio_buttons, collection: ['spot', 'shop'] %>
     </div>
     <div id="spot-btn-upload">
       <%= f.input :photos, as: :file, input_html: { multiple: true, onChange: "Rails.fire(this.form, 'submit')" } %>

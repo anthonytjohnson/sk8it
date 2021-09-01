@@ -1,0 +1,5 @@
+meta_product_name: "SK8IT"
+meta_title: "SK8IT - Search, Skate, Showoff"
+meta_description: "Skateboard spots, shops, parks, and a community in one app"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

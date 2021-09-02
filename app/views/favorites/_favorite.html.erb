@@ -1,11 +1,11 @@
 <% if !Favorite.exists?(user_id: current_user.id, spot_id: spot.id) %>
   <%= link_to spot_favorites_path(spot.id), method: :post, remote: true, class:"like-btn" do %>
-    <i class="fas fa-star star-icon1"></i>
+    <i class="far fa-heart star-icon1"></i>
   <% end %>
   <span class="star-count1"><%= spot.favorites.count %></span>
 <% else %>
   <%= link_to spot_favorite_path(spot_id: spot.id, id: spot.favorites[0].id), method: :delete, remote: true, class:"like-btn" do %>
-    <i class="fas fa-star star-icon2"></i>
+    <i class="fas fa-heart star-icon2"></i>
   <% end %>
   <span class="star-count2"><%= spot.favorites.count %></span>
 <% end %>

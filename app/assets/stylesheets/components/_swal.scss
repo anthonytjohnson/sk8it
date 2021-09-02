@@ -1,0 +1,21 @@
+#swal2-title {
+  color: white;
+  background-color: $sk8it-black;
+  font-weight: normal;
+}
+
+.swal2-actions {
+  background: $sk8it-blue !important;
+}
+
+.swal2-popup {
+  background: $sk8it-blue !important;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: $sk8it-red !important;
+}
+
+.swal2-styled.swal2-deny {
+  background-color: $sk8it-black !important;
+}

@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import Rails from '@rails/ujs';
 
+
 const initSweetAlert = () => {
   if (document.querySelector("#check-in-form")) {
     Swal.fire({

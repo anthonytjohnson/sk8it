@@ -2,22 +2,27 @@
   display: flex;
   align-items: center;
 }
-.tabs-underlined {
-  .tab-underlined {
-    color: white;
-    padding: 8px;
-    margin: 8px 16px;
-    opacity: .4;
-    cursor: pointer;
-    text-decoration: none;
-    border-bottom: 4px solid transparent;
-    display: block;
-  }
-  .tab-underlined:hover {
-    opacity: 0.5;
-  }
-  .tab-underlined.active {
-    opacity: 1;
-    border-bottom: 3px solid #555555;
-  }
+
+.tabs-underlined .tab-underlined {
+  color: white;
+  padding: 8px;
+  margin: 8px 16px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+  display: block;
+  font-size: 2rem;
+}
+
+.tabs-underlined .tab-underlined a {
+    border-left: .5rem solid $sk8it-red;
+}
+.tab-underlined:hover {
+  opacity: 0.5;
+}
+
+.tab-underlined.active {
+  opacity: 1;
+  border-bottom: 3px solid $sk8it-red;
 }

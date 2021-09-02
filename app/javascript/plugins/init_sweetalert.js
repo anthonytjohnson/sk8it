@@ -14,8 +14,6 @@ const initSweetAlert = () => {
         if (result.isConfirmed) {
           const form = document.querySelector("#check-in-form");
           Rails.fire(form, 'submit');
-        } else {
-          console.log("nada");
         }
       })
     }

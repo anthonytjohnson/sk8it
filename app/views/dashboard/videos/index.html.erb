@@ -51,23 +51,16 @@
     <div class="tab-pane fade py-3 my-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
       <div class="container my-3">
           <% if current_user.favorites.present? %>
-            <ul class="relative-post-lists">
             <% current_user.favorites.each do |favorite| %>
-              <li class='post-list'>
+              <div>
                 <%= link_to spot_path(favorite.spot.id) do %>
-                <div class='post-img-content'>
-                  <%= image_tag favorite.spot.photos[0], class: "post-img" %>
-                </div>
-                  <div class='relative-post-name'>
-        Product name:<%= favorite.spot.name %>
-                  </div>
-                  <div class='relative-item-price'>
-                    <span><%= favorite.spot.description %>Circle(tax included)</span>
-                  </div>
+                  <%= cl_image_tag(favorite.spot.photos[0].key)%>
+                  <h2><%= favorite.spot.name %></h2>
+                  <p><%= favorite.spot.description %></p>
                 <% end %>
-              </li>
+              </div>
+              <hr>
             <% end %>
-            </ul>
           <% end %>
       </div>
     </div>

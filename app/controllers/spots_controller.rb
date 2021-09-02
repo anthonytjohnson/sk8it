@@ -115,16 +115,6 @@ class SpotsController < ApplicationController
     end
   end
 
-
-
-
-
-
-
-
-
-
-
   private
 
   def spot_params

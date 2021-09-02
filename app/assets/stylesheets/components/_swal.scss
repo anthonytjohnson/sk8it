@@ -1,0 +1,24 @@
+#swal2-title {
+  color: white;
+  background-color: $sk8it-blue;
+  font-weight: normal;
+  // background-image: url("checkin.jpg");
+  // background-size: cover;
+  // background-position-y: 10%;
+}
+
+.swal2-actions {
+  background: $sk8it-black !important;
+}
+
+.swal2-popup {
+  background: $sk8it-black !important;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: $sk8it-red !important;
+}
+
+.swal2-styled.swal2-deny {
+  background-color: $sk8it-blue !important;
+}

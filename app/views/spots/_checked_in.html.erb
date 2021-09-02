@@ -1,8 +1,8 @@
 <div id="checked_in">
-  <div class="d-flex justify-content-center mt-3">
-    <h2>Skaters at this spot now...</h2>
-  </div>
   <% if @spot.check_ins.length > 0 %>
+    <div class="d-flex justify-content-center mt-3">
+      <h2>Skaters at this spot now...</h2>
+    </div>
     <% @spot.check_ins.each do |user| %>
       <% if user_signed_in? && user == current_user %>
         <%= link_to dashboard_videos_path do %>

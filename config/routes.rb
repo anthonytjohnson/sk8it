@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :spots, only: [:index, :show, :new, :create] do
     resources :videos, only: [:new, :create]
     resources :reviews, only: [:create]
-    resources :favorites, only: [:create]
+    resources :favorites, only: [:create, :destroy]
   end
 
   resources :users, only: [:show, :update] do

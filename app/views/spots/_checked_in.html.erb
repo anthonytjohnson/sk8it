@@ -1,9 +1,9 @@
 <div id="checked_in">
-  <% if @spot.check_ins.length > 0 %>
+  <% if spot.check_ins.length > 0 %>
     <div class="d-flex justify-content-center mt-3">
       <h2>Skaters at this spot now...</h2>
     </div>
-    <% @spot.check_ins.each do |user| %>
+    <% spot.check_ins.order(updated_at: :asc).each do |user| %>
       <% if user_signed_in? && user == current_user %>
         <%= link_to dashboard_videos_path do %>
           <%= cl_image_tag user.photo.attached? ? cl_image_path(user.photo.key) : image_path("https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic.jpg"), class: "avatar-bordered overlaid" %>

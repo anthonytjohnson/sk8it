@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   private

@@ -1,6 +1,7 @@
 class Spot < ApplicationRecord
   belongs_to :user
   has_many :check_ins, class_name: "User", foreign_key: "spot_id"
+  has_many :likes, dependent: :destroy
   has_many :reviews
   has_many :videos
   has_many_attached :photos

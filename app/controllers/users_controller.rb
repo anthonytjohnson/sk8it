@@ -4,6 +4,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @comment = Comment.new
+
+    favorites = Like.where(user_id: current_user.id).order(created_at: :desc).pluck(:spot_id)
+    @favorites = Spot.find(favorites)
   end
 
   def update

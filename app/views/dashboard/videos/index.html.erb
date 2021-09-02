@@ -5,33 +5,64 @@
     <h2><%= "#{current_user.email}" %></h2>
   </div>
   <br>
-  <div>
-    <% if current_user.videos.present? %>
-      <h1>Your Videos</h1>
-      <% current_user.videos.each do |video| %>
-        <div class="card-video mb-5">
-          <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
-          <div class="video-infos" id="video-<%= video.id %>">
-            <div>
-              <p class="mr-5"><i class="fas fa-quote-left"></i> <%= video.caption.capitalize %></p>
+
+  <ul class="nav tabs-underlined" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#my-socks" role="tab" aria-controls="home" aria-selected="true">Videos</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="profile" aria-selected="false">Favorites</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade py-3 show active" id="my-socks" role="tabpanel" aria-labelledby="home-tab">
+      <div class="container my-3">
+        <div>
+          <% if current_user.videos.present? %>
+            <h1>Your Videos</h1>
+            <% current_user.videos.each do |video| %>
+              <div class="card-video mb-5">
+                <%= cl_video_tag(video.video.key, controls: true, width: 300, class: "card-img-top") %>
+                <div class="video-infos" id="video-<%= video.id %>">
+                  <div>
+                    <p class="mr-5"><i class="fas fa-quote-left"></i> <%= video.caption.capitalize %></p>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <p class="mr-2"><%= video.votes %></p>
+                    <p><i data-video-id="<%= video.id %>" class="fas fa-comments comment-list"></i></p>
+                  </div>
+                </div>
+              </div>
+              <div class="comments" id="comments-<%= video.id %>" >
+                <% video.comments.each do |comment| %>
+                  <i class="fas fa-quote-left"></i>
+                  <p><em><%= comment.comment %></em></p>
+                <% end %>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="container">
+              <h2>You haven't uploaded any videos yet!</h2>
             </div>
-            <div class="d-flex align-items-center justify-content-center">
-              <p class="mr-2"><%= video.votes %></p>
-              <p><i data-video-id="<%= video.id %>" class="fas fa-comments comment-list"></i></p>
-            </div>
-          </div>
-        </div>
-        <div class="comments" id="comments-<%= video.id %>" >
-          <% video.comments.each do |comment| %>
-            <i class="fas fa-quote-left"></i>
-            <p><em><%= comment.comment %></em></p>
           <% end %>
         </div>
-      <% end %>
-    <% else %>
-      <div class="container">
-        <h2>You haven't uploaded any videos yet!</h2>
       </div>
-    <% end %>
+    </div>
+    <div class="tab-pane fade py-3 my-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container my-3">
+          <% if current_user.favorites.present? %>
+            <% current_user.favorites.each do |favorite| %>
+              <div>
+                <%= link_to spot_path(favorite.spot.id) do %>
+                  <%= cl_image_tag(favorite.spot.photos[0].key)%>
+                  <h2><%= favorite.spot.name %></h2>
+                  <p><%= favorite.spot.description %></p>
+                <% end %>
+              </div>
+              <hr>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>

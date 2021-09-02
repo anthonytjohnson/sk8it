@@ -5,6 +5,15 @@
     <h2><%= "#{current_user.email}" %></h2>
   </div>
   <br>
+
+  <ul class="nav tabs-underlined" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#my-socks" role="tab" aria-controls="home" aria-selected="true">Videos</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="profile" aria-selected="false">Reviews</a>
+    </li>
+  </ul>
   <div>
     <% if current_user.videos.present? %>
       <h1>Your Videos</h1>

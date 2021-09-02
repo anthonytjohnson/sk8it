@@ -1,6 +1,6 @@
 <%= render 'shared/search' %>
 <%= render 'spot-details' %>
-<div class='star-btn' id="favorite_<%= @spot.id %>">
+<div class='star-btn' id="favorite_button">
   <%= render "favorites/favorite", spot: @spot %>
 </div>
 <% if @spot.category == "shop" %>

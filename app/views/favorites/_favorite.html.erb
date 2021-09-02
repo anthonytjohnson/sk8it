@@ -4,8 +4,8 @@
   <% end %>
   <span class="star-count1"><%= spot.favorites.count %></span>
 <% else %>
-  <%= link_to spot_favorites_path(spot_id: spot.id, id: spot.favorites[0].id), method: :delete, remote: true, class:"like-btn" do %>
+  <%= link_to spot_favorite_path(spot_id: spot.id, id: spot.favorites[0].id), method: :delete, remote: true, class:"like-btn" do %>
     <i class="fas fa-star star-icon2"></i>
   <% end %>
-  <span class="star-count2"><%= post.likes.count %></span>
+  <span class="star-count2"><%= spot.favorites.count %></span>
 <% end %>

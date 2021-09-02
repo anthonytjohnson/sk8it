@@ -4,8 +4,9 @@ import Rails from '@rails/ujs';
 
 const initSweetAlert = () => {
   if (document.querySelector("#check-in-form")) {
+    const spotName = document.querySelector("#spot-name").innerText
     Swal.fire({
-      title: "Do you want to check in to this spot?",
+      title: `Do you want to check in to ${spotName}?`,
       confirmButtonText: `Yes`,
       showDenyButton: true,
       denyButtonText: `No`,

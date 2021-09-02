@@ -14,7 +14,7 @@ const initUserLocation = () => {
       const distance = turf.distance(from, to)
 
 
-      if (distance >= 0.5) {
+      if (distance <= 0.1) {
         initSweetAlert()
       }
     });

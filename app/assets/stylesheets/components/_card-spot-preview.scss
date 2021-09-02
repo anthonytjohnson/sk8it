@@ -9,19 +9,11 @@
 
 .spot-info {
   color: white;
-  padding: .5rem .5rem 2rem .5rem;
+  padding: .5rem .5rem 0 .5rem;
   margin: 1rem;
   background-color: #30475e;
   border-left: 1rem solid #f05454;
   position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-}
-
-#rating {
-  position: absolute;
-  left: 3.5rem;
-  bottom: 1rem;
-  z-index: 99;
-
+  bottom: .5rem;
+  left: .5rem;
 }

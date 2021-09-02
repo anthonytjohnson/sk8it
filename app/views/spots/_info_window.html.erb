@@ -10,20 +10,19 @@
     <div class="swiper-wrapper">
       <% spot.photos.each do |photo| %>
         <div class="swiper-slide">
-          <div id="rating">
-            <% sum = 0 %>
-            <% counter = spot.reviews.size %>
-            <% spot.reviews.each do |review| %>
-              <% sum += review.rating %>
-            <% end %>
-          <p class="small">Avg Rating: <%= spot.reviews.empty? ? "None yet" : sum/counter %></p>
-          </div>
-
           <div class="spot-preview">
             <%=link_to cl_image_tag(photo.key, style: 'height: 30vh; width: 95vw;'), spot %>
-            <div class="ml-3">
+            <div class="ml-4">
               <h5 class="spot-info">
                 <%= link_to spot.name.capitalize, spot %>
+                <div id="rating">
+                  <% sum = 0 %>
+                  <% counter = spot.reviews.size %>
+                  <% spot.reviews.each do |review| %>
+                    <% sum += review.rating %>
+                  <% end %>
+                  <p class="small">Avg Rating: <%= spot.reviews.empty? ? "None yet" : sum/counter %></p>
+                </div>
               </h5>
             </div>
           </div>

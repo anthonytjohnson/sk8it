@@ -32,7 +32,7 @@
   </div>
 <% end %>
 <% if @spot.category == "spot" %>
-  <div class="flex mt-3 overlay">
+  <div class="flex mt-3 overlay" id="spot-div">
     <%= render 'checked_in', spot: @spot %>
   </div>
   <ul class="nav tabs-underlined" id="myTab" role="tablist">

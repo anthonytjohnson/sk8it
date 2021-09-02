@@ -4,6 +4,11 @@
     <p></i><%= @spot.description %></p>
   <p><i class="fas fa-map-marker-alt" id="marker"></i> <%= @spot.address %></p>
   <div class="carousel-container">
+    <% if current_user %>
+      <div class='star-btn' id="favorite_button">
+        <%= render "favorites/favorite", spot: @spot %>
+      </div>
+    <% end %>
     <div data-controller="carousel" class="swiper-container" id="show" data-carousel-options-value='{
     "pagination": { "el": ".swiper-pagination",
                     "dynamicBullets": "true" },

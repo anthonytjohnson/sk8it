@@ -2,7 +2,7 @@ class User < ApplicationRecord
   belongs_to :spot, optional: true
   has_many :videos
   has_many :spots
-  has_many :likes
+  has_many :favorites
   has_one_attached :photo
   has_many :videos_as_owner, through: :spots, source: :videos
 

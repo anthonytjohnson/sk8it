@@ -1,8 +1,10 @@
 <%= render 'shared/search' %>
 <%= render 'spot-details' %>
+<% if current_user %>
 <div class='star-btn' id="favorite_button">
   <%= render "favorites/favorite", spot: @spot %>
 </div>
+<% end %>
 <% if @spot.category == "shop" %>
   <div class="container my-3">
     <% if current_user.present? %>

@@ -62,3 +62,14 @@
 .ap-suggestion {
   color: $sk8it-black;
 }
+
+.form-check-input {
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -1.25rem;
+  transform: scale(1.5);
+}
+
+.form-check-label {
+    margin-left: 1rem;
+}

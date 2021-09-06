@@ -1,5 +1,6 @@
 # SK8IT
 
+Search, Skate, Showoff
 This project is a user-driven progressive web application that allows skaters to find new skate shops and parks, upload new skating spots, share videos, and connect with the skating community in Japan.
 
 ## How to use

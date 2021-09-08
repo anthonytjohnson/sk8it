@@ -11,6 +11,9 @@
 
 .carousel-container {
   position: relative;
+  img {
+    object-fit: scale-down;
+  }
 }
 
 #favorite_button {

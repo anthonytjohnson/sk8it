@@ -1,1 +1,6 @@
 // Specific CSS for your home-page
+@media(min-width: 930px) {
+  .btn-gradient{
+    border: 2px solid black !important;
+  }
+}

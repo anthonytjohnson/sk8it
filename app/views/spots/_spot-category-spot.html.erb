@@ -1,0 +1,67 @@
+<% if @spot.category == "spot" %>
+  <div class="flex mt-3 overlay" id="spot-div">
+    <%= render 'checked_in', spot: @spot %>
+  </div>
+  <ul class="nav tabs-underlined" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#my-socks" role="tab" aria-controls="home" aria-selected="true">Videos</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="profile" aria-selected="false">Reviews</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade py-3 show active" id="my-socks" role="tabpanel" aria-labelledby="home-tab">
+      <div class="container my-3">
+        <div class="btn-upload my-3">
+          <% if current_user.present? %>
+            <%= render 'videos/modal' %>
+          <% else %>
+            <%= link_to "Upload Video", new_user_session_path, class: "btn btn-gradient" %>
+          <% end %>
+        </div>
+        <% if @spot.videos.empty? %>
+          <p class="text-center">No videos. Be the first to add one!</p>
+        <% else %>
+          <h2 class="ml-5 mt-3">Top Video</h2>
+          <div class="card-video">
+            <%= render 'top_video', spot: @spot, top_video: @top_video %>
+          </div>
+          <div>
+            <h2 class="ml-5 mt-5">Videos</h2>
+            <%= render 'videos', spot: @spot, videos: @videos %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade py-3 my-3" id="bookings" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container my-3">
+        <div class="btn-upload my-3">
+          <% if current_user.present? %>
+            <%= render 'reviews/modal' %>
+          <% else %>
+            <%= link_to "Review", new_user_session_path, class: "btn btn-gradient" %>
+          <% end %>
+        </div>
+        <% if @spot.reviews.empty? %>
+          <div class='container mt-5 text-center'>
+            <p>No reviews yet.</p>
+            <p>Be the first to leave a review for <%= @spot.name %>!</p>
+          </div>
+        <% else %>
+          <div class="container ml-4">
+            <% @spot.reviews.each do |review| %>
+              <p><em><i class="fas fa-quote-left"></i> <%= review.comment %></em></p>
+              <div class="d-flex">
+                <% review.rating.times do %>
+                  <p class="small"><em><i class="fas fa-star"></i> </em></p>
+                <% end %>
+              </div>
+              <hr class="mt-3">
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

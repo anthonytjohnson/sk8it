@@ -1,11 +1,13 @@
-<%= render 'shared/navbar' %>
 <body id="home-bg">
+  <%= render 'shared/navbar' %>
   <div id="home-container">
-    <h2 class="text-center mb-3">
-      SEARCH | SKATE | SHOWOFF <br>
+    <h2 class="list-inline text-center">
+      <li class="list-inline-item">SEARCH</li>
+      <li class="list-inline-item">SKATE</li>
+      <li class="list-inline-item">SHOWOFF</li>
     </h2>
-    <div class="container d-flex justify-content-center">
-      <%= link_to "Let's go!", spots_path, class: "btn btn-gradient" %>
-    </div>
+    <span class="container d-flex justify-content-center">
+      <%= link_to "Let's go!", spots_path, class: "btn btn-gradient lets-go" %>
+    </span>
   </div>
 </body>

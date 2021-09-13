@@ -1,31 +1,47 @@
 // Specific CSS for your home-page
 #home-container {
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-position: -85px 20px;
 }
 
-#home-bg a.btn.btn-gradient.navbar-login {
+#home-bg a.btn.btn-gradient.navbar-login, #home-bg a.btn.btn-gradient.navbar-signup  {
   background:#e98787;
+  margin-right: .8rem;
+  opacity: .7;
+   &:hover {
+    background: $sk8it-red;
+    opacity: 1;
+  }
 }
 
-#home-bg {
-  background-image: url("home-with-logo.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+#home-bg a.btn.btn-gradient.lets-go {
+  font-weight: bold;
+  &:hover {
+    color: $sk8it-black !important;
+  }
 }
 
-@media(min-width: 930px) {
+
   #home-bg {
-    background-image: url("sk8it-home-wide.jpg");
+    background-image: linear-gradient(
+      rgba(34, 40, 49, 0.3),
+      rgba(48, 71, 94, 0.3)
+    ),
+    url("sk8it-home-wide.jpg");
+    background-size: cover;
     background-position: center;
-    border: 1px solid black;
   }
   #home-container h2 {
-    font-size: 5rem;
-    text-shadow: .3rem .3rem 1rem black;
+    font-size: 6rem;
+    text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
   }
-}
+  #home-bg a.btn.btn-gradient.lets-go {
+  font-size: 2rem;
+  font-weight: bold;
+    &:hover {
+      color: $sk8it-black !important;
+      box-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+    }
+  }

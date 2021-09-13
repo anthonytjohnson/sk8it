@@ -1,6 +1,31 @@
 // Specific CSS for your home-page
+#home-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: -85px 20px;
+}
+
+#home-bg a.btn.btn-gradient.navbar-login {
+  background:#e98787;
+}
+
+#home-bg {
+  background-image: url("home-with-logo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 @media(min-width: 930px) {
-  #home-bg .btn-gradient{
-    background: linear-gradient(#22364b, $sk8it-blue);
+  #home-bg {
+    background-image: url("sk8it-home-wide.jpg");
+    background-position: center;
+    border: 1px solid black;
+  }
+  #home-container h2 {
+    font-size: 5rem;
+    text-shadow: .3rem .3rem 1rem black;
   }
 }

@@ -1,19 +1,11 @@
+<%= render 'shared/navbar' %>
 <body id="home-bg">
   <div id="home-container">
-    <% if current_user.nil? %>
-      <h2 class="text-center mb-5" style="margin: 0 auto; font-size: 3rem">Search, Skate, Showoff</h2>
-      <div class="container d-flex justify-content-center">
-        <%= link_to "Log In", new_user_session_path, class: "btn btn-gradient m-2" %>
-        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-gradient m-2" %>
-      </div>
-      <div class="container d-flex justify-content-center">
-        <%= link_to "Let's go!", spots_path, class: "btn btn-gradient m-2" %>
-      </div>
-    <% else %>
-      <h2 class="text-center mb-3" style="margin: 0 auto; font-size: 3rem">Search, Skate, Showoff</h2>
-      <div class="container d-flex justify-content-center">
-        <%= link_to "Let's go!", spots_path, class: "btn btn-gradient" %>
-      </div>
-    <% end %>
+    <h2 class="text-center mb-3">
+      SEARCH | SKATE | SHOWOFF <br>
+    </h2>
+    <div class="container d-flex justify-content-center">
+      <%= link_to "Let's go!", spots_path, class: "btn btn-gradient" %>
+    </div>
   </div>
 </body>

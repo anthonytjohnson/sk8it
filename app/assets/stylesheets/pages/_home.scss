@@ -7,13 +7,12 @@
 }
 
 #home-bg a.btn.btn-gradient.navbar-login, #home-bg a.btn.btn-gradient.navbar-signup  {
-  background:#e98787;
+  background:rgba(240, 84, 84, 0.7);
   margin-right: .8rem;
-  opacity: .7;
    &:hover {
-    background: $sk8it-red;
-    opacity: 1;
+     background:rgba(240, 84, 84, 1);
   }
+  color: rgba($color: white, $alpha: 1.0);
 }
 
 #home-bg a.btn.btn-gradient.lets-go {

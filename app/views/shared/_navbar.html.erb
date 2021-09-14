@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon flex-nowrap">
+<div class="navbar flex-nowrap navbar-expand-sm navbar-light">
   <% if current_user.present? %>
     <div class="dropdown">
       <button class="dropbtn">
@@ -10,10 +10,6 @@
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </div>
     </div>
-  <% else %>
-    <%= link_to "Log In", new_user_session_path, class: "btn btn-gradient navbar-login" %>
-  <% end %>
-  <div class="container d-flex align-items-center">
     <div class="container justify-content-end mr-2">
       <p style="word-spacing: 4px"><%= link_to "New Spot", new_spot_path %></p>
       <%= link_to new_spot_path do %>
@@ -23,5 +19,11 @@
         <p><i class="fas fa-map-marked-alt"></i></p>
       <% end %>
     </div>
+  <% else %>
+    <div class="container d-flex mb-2">
+      <span class="mr-auto p-2"><%= link_to image_tag("sk8it-logo.png"), spots_path %></span>
+      <span class="p-2"><%= link_to "Log In", new_user_session_path, class: "btn btn-gradient navbar-login" %></span>
+      <span class="p-2"><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-gradient navbar-signup" %></span>
+    <% end %>
   </div>
 </div>

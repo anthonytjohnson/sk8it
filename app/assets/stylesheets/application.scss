@@ -14,6 +14,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+@import "pages/home";
 
 
 * {
@@ -58,20 +59,5 @@ a {
   &:hover {
     color: white !important;
     text-decoration: none !important;
-  }
-}
-
-#home-bg {
-  background-image: url("home-with-logo.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-@media(min-width: 930px) {
-  #home-bg {
-    background-image: url("logo-wider.jpg");
-    background-position: center;
-    border: 1px solid black;
   }
 }

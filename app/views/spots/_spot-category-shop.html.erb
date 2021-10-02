@@ -1,31 +1,29 @@
-<% if @spot.category == "shop" %>
-  <div class="container my-3">
-    <% if current_user.present? %>
-      <div class="btn-upload my-3">
-        <%= render 'reviews/modal' %>
-      </div>
-    <% else %>
-      <div class="btn-upload my-3">
-        <%= link_to "Review", new_user_session_path, class: "btn btn-gradient" %>
-      <% end %>
+<div class="container my-3">
+  <% if current_user.present? %>
+    <div class="btn-upload my-3">
+      <%= render 'reviews/modal' %>
     </div>
-    <% if @spot.reviews.empty? %>
-      <div class='container mt-5 text-center'>
-        <p>No reviews yet.</p>
-        <p>Be first to leave a review for <%= @spot.name %>!</p>
-      </div>
-    <% else %>
-      <div class="container ml-a">
-        <% @spot.reviews.each do |review| %>
-          <p><em><i class="fas fa-quote-left"></i> <%= review.comment %></em></p>
-          <div class="d-flex">
-            <% review.rating.times do %>
-              <p class="small p-1"><em><i class="fas fa-star"></i> </em></p>
-            <% end %>
-          </div>
-          <hr class="mt-3">
-        <% end %>
-      </div>
+  <% else %>
+    <div class="btn-upload my-3">
+      <%= link_to "Review", new_user_session_path, class: "btn btn-gradient" %>
     <% end %>
   </div>
-<% end %>
+  <% if @spot.reviews.empty? %>
+    <div class='container mt-5 text-center'>
+      <p>No reviews yet.</p>
+      <p>Be first to leave a review for <%= @spot.name %>!</p>
+    </div>
+  <% else %>
+    <div class="container ml-a">
+      <% @spot.reviews.each do |review| %>
+        <p><em><i class="fas fa-quote-left"></i> <%= review.comment %></em></p>
+        <div class="d-flex">
+          <% review.rating.times do %>
+            <p class="small p-1"><em><i class="fas fa-star"></i> </em></p>
+          <% end %>
+        </div>
+        <hr class="mt-3">
+      <% end %>
+    </div>
+  <% end %>
+</div>
